@@ -8,6 +8,12 @@
         <form action="" method="post">
             <p>Titre:</p>
             <input type="text" name="name_art" required/>
+            <p>Sujet:</p>
+            <select name="language_art">
+                <option value="python">Python</option>
+                <option value="js">JavaScript</option>
+                <option value="kotlin">Kotlin</option>
+            </select>
             <p>Contenu:</p>
             <textarea name="content_art" required></textarea>
             <p>Date:</p>
