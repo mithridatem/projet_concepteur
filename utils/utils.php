@@ -22,4 +22,5 @@ function has_all_args($tab, $list){
     }
     return true;
 }
+
 ?>
