@@ -20,6 +20,7 @@ cloner le folder dans votre www
 Créer la base de donner à l'aide du fichier sql ce trouvant dans le dossier conception  
 Il faudra remettre en place dans le dossier utils un pdo avec le code suivant  
 
+```php
 <?php
 
 #Instanciation de l'objet PDO pour pouvoir ce connecter à la bdd
@@ -29,6 +30,7 @@ array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
 
 ?>
+```
 Ouvrir un terminal dans le dossier src  
 faire un npm install 
 et normalement c'est tout 
