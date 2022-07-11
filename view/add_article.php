@@ -5,7 +5,7 @@
         <link href="./css/add_user.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <form action="../controller/add_article.php" method="post">
+        <form action="" method="post">
             <p>Titre:</p>
             <input type="text" name="name_art" required/>
             <p>Contenu:</p>

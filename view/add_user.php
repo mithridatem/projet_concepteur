@@ -5,7 +5,7 @@
         <link href="./css/add_user.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <form action="../controller/add_user.php" method="post">
+        <form action="" method="post">
             <p>Prénom:</p>
             <input type="text" name="first_name_util" required/>
             <p>Nom:</p>

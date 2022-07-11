@@ -14,4 +14,12 @@ function get_from($name, $list, $default=""){
 function echo_existing($var){
     if(!empty($var))echo $var;
 }
+function has_all_args($tab, $list){
+    foreach($tab as $var){
+        if(!isset($list[$var]) or empty($list[$var])){
+            return false;
+        }
+    }
+    return true;
+}
 ?>
