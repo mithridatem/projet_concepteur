@@ -11,7 +11,7 @@
             <p>Contenu:</p>
             <textarea name="content_art" required></textarea>
             <p>Date:</p>
-            <input type="date" name="date_art" required/>
+            <input type="date" name="date_art"/>
             <input type="submit" value="Valider" name="submit_util" id="submit" />
         </form>
     </body>

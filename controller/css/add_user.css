@@ -8,3 +8,7 @@ form{
  #submit{
     margin-top: 2vh;
  }
+ .error{
+    text-align: center;
+    color: red;
+ }
