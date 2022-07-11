@@ -7,11 +7,12 @@
 </head>
 <body>
     <h3>Ajouter un utilisateur :</h3>
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         <p><input type="text" name="name_util"></p>
         <p><input type="text" name="first_name_util"></p>
         <p><input type="text" name="mail_util"></p>
         <p><input type="text" name="mdp_util"></p>
+        <p><input type="file" name="file"></p>
         <p><input type="submit" value="Envoyer" name="bt"></p>
     </form>
 </body>
