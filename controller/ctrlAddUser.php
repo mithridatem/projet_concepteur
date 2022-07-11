@@ -1,5 +1,6 @@
 <?php
 //imports
+include '../view/viewAddUser.php';
 //test vérifier le contenu des inputs
 //test si submit à été cliqué
 if(isset($_POST['bt'])){

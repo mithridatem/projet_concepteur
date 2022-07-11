@@ -6,7 +6,7 @@
     <title>Ajouter un utilisateur</title>
 </head>
 <body>
-    <form action="../controller/ctrlAddUser.php" method="post">
+    <form action="" method="post">
         <p><input type="text" name="name_util"></p>
         <p><input type="text" name="first_name_util"></p>
         <p><input type="text" name="mail_util"></p>
