@@ -7,11 +7,11 @@
     <body>
         <form action="../controller/add_article.php" method="post">
             <p>Titre:</p>
-            <input type="text" name="name_art" />
+            <input type="text" name="name_art" required/>
             <p>Contenu:</p>
-            <textarea name="content_art"></textarea>
+            <textarea name="content_art" required></textarea>
             <p>Date:</p>
-            <input type="date" name="date_art" />
+            <input type="date" name="date_art" required/>
             <input type="submit" value="Valider" name="submit_util" id="submit" />
         </form>
     </body>
