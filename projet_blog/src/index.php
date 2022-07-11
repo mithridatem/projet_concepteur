@@ -7,7 +7,6 @@
     <title>Document</title>
     <link href="./dist/output.css" rel="stylesheet" />
   </head>
-
   <body>
  
   </body>

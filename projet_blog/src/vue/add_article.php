@@ -7,7 +7,7 @@
  */
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8" />
@@ -22,7 +22,7 @@
  * content_art
  * date_art -->
     <form action="../controller/ctrl_add_article.php" class="justify-center flex " method="POST">
-        <div class="mt-8 w-80">
+        <div class="mt-8 w-2/5">
             <div class="grid grid-cols-1 gap-6">
                 <label class="block">
                     <span class="text-gray-700">Article name</span>
@@ -45,6 +45,9 @@
                     <option>Other</option>
                 </select>
 
+                <span class="text-gray-700">Une date</span>
+                <input type="date" class="mt-1 block w-full" name="date_art">
+              
                 <span class="text-gray-700">Votre article</span>
                 <textarea class="
                     mt-0
@@ -58,7 +61,7 @@
                 </textarea>
 
            
-                <input type="submit" value="submit" class="rounded-full bg-blue-800 text-white" name="content_art"/>
+                <input type="submit" value="submit" class="rounded-full bg-blue-800 text-white h-10" name="submit"/>
             </div>
         </div>
     </form>
