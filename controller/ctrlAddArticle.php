@@ -8,11 +8,13 @@
             //test si date vide
             if(empty($_POST['date_art'])){
                 $date_art = $date;
+                addArticle($bdd, $date_art);
                 echo "article : ".$_POST['name_art']. " date : " .$date_art; 
             }
             //si l'utilisateur à choisi une date
             else{
                 $date_art = $_POST['date_art'];
+                addArticle($bdd, $date_art);
                 echo "article : ".$_POST['name_art']. " date : " .$date_art; 
             }
         }

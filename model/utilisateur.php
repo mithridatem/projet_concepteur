@@ -25,7 +25,7 @@
                 'mail_util'=>$_POST['mail_util'],
             ));
             $data = $req->fetchAll(PDO::FETCH_OBJ);
-            if(isset($data)){
+            if(!empty($data)){
                 return true;
             }
             else{
@@ -50,5 +50,5 @@
             //affichage d'une exception en cas d’erreur
             die('Erreur : '.$e->getMessage());
         }
-    }       
+    }      
 ?>

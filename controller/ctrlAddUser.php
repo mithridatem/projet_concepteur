@@ -24,9 +24,12 @@
                 //déplacer le fichier importé dans le dossier image à la racine du projet
                 $fichier = move_uploaded_file($tmpName, $file);
                 echo "test";
-                addUser($bdd,$name);
+                if(!getAllUserbyMail($bdd)){
+                    addUser($bdd,$name);
+                }
+                
             }
-            else{
+            if(!getAllUserbyMail($bdd)){
                 addUser($bdd,$file);
             }
             
