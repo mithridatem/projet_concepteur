@@ -13,8 +13,8 @@
 
     <div class="d-flex justify-content-center">
       <div class="col-10">
-        <table class="table col-6 " >
-          <thead class="col-6">
+        <table class="table" >
+          <thead>
             <tr>
               <th scope="col">#</th>
               <th scope="col">Name</th>
