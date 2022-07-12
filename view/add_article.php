@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Ajouter Utilisateur</title>
+        <title>Ajouter Article</title>
         <link href="./css/add_user.css" rel="stylesheet" type="text/css">
     </head>
     <body>
@@ -9,10 +9,18 @@
             <p>Titre:</p>
             <input type="text" name="name_art" required/>
             <p>Sujet:</p>
-            <select name="language_art">
-                <option value="python">Python</option>
-                <option value="js">JavaScript</option>
-                <option value="kotlin">Kotlin</option>
+            <select name="id_type">
+            <?php
+                    include "../utils/bdd.php";
+                    include "../model/type.php";
+                    
+                    $data = getAllType($bdd);
+                    foreach($data as $k){
+                        $type = $k['name_type'];
+                        $id = $k['id_type'];
+                        echo"<option value='$id'>$type</option>";
+                    }
+                ?>
             </select>
             <p>Contenu:</p>
             <textarea name="content_art" required></textarea>
@@ -22,3 +30,4 @@
         </form>
     </body>
 </html>
+

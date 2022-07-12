@@ -5,11 +5,13 @@
         <link href="./css/add_user.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             <p>Prénom:</p>
             <input type="text" name="first_name_util" required/>
             <p>Nom:</p>
             <input type="text" name="name_util" required/>
+            <p>Avatar:</p>
+            <input type="file" name="img_util" accept="image/*"/>
             <p>Email:</p>
             <input type="email" name="mail_util" required/>
             <p>Password:</p>

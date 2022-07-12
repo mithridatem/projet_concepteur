@@ -3,6 +3,7 @@ include '../utils/utils.php';
 include '../view/add_user.php';
 include '../utils/validator.php';
 include '../utils/bdd.php';
+include '../model/user.php';
 
 
 function validate_post(){
@@ -18,12 +19,17 @@ function validate_post(){
     }
     return true;
 }
+
+
 if(validate_post()){
-    addUser($bdd);
-    echo_existing(post_element('first_name_util'));
-    echo_existing(post_element('name_util'));
-    echo_existing(post_element('mail_util'));
-    echo_existing(post_element('pwd_util'));
+    if (isset($_FILES['img_util'])){
+        $name = $_FILES['img_util']['name'];
+        $temp = $_FILES['img_util']['tmp_name'];
+        $f = move_uploaded_file($temp, "../asset/$temp");
+        addUser($bdd, "../asset/$temp");
+    }
+    else addUser($bdd);
+    echo"Requête réalisée avec succès";
 } 
 else if(isset($_POST['submit_util'])) echo"<p class='error'>Veuillez compléter le formulaire</p>";
 ?>
