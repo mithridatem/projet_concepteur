@@ -1,5 +1,9 @@
 <?php
     class ManagerArticle extends Article{
+        //redéfinition du getter
+        public function getNameArt(){
+           return strtoupper(parent::getNameArt());
+        }
         //fonction ajouter un article
         public function addArticle($bdd, $date){
             try{
