@@ -37,9 +37,9 @@
         }
     } 
     
-    function getArticleById($bdd, $id):array{
+    function getArticleById($bdd, $id){
         try{
-            $req = $bdd->prepare("SELECT * FROM article WHERE id =:id");
+            $req = $bdd->prepare("SELECT * FROM article WHERE id_art =:id");
             $req->execute(array(
               'id'=>$id
             ));
