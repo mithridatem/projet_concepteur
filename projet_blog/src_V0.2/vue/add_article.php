@@ -1,11 +1,3 @@
-<?php
-
-/**
- * name_art
- * content_art
- * date_art
- */
-?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -14,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="../dist/output.css" rel="stylesheet" />
+    <link href="./dist/output.css" rel="stylesheet" />
 </head>
 
 <body>
     <!-- * name_art
- * content_art
- * date_art -->
-    <form action="../controller/ctrl_add_article.php" class="justify-center flex " method="POST">
+        * content_art
+        * date_art -->
+    <form action="" class="justify-center flex " method="POST">
         <div class="mt-8 w-2/5">
             <div class="grid grid-cols-1 gap-6">
                 <label class="block">

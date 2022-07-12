@@ -1,13 +1,13 @@
 <?php
 
-include '../vue/add_user.php';
-include '../utils/connect_bdd.php';
-include '../model/user.php';
+include './vue/add_user.php';
+include './utils/connect_bdd.php';
+include './model/user.php';
 $entry = [];
 #Verifier le contenus des input
 if (isset($_POST['submit'])) {
     if (!empty($_POST['name_util']) && !empty($_POST['first_name_util']) && !empty($_POST['mail_util']) && !empty($_POST['mdp_util'])) {
-        if(verify_mail_exist($bdd)){
+        if(!verify_mail_exist($bdd)){
             if (!empty($_FILES['img_util']['name'])) {
                 $temp_name = $_FILES["img_util"]["tmp_name"];
                 $name = $_FILES["img_util"]["name"];
@@ -17,20 +17,20 @@ if (isset($_POST['submit'])) {
                 move_uploaded_file($temp_name,  $path);
             } else {
                 $path = "default.jpg";
-                $entry_value = '<p  class="text-xl before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-red-600 relative inline-block " > <span class="relative text-white " >Aucune image ajouter </span> </p> ';
+                $entry_value = '<p  class="text-xl before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-red-600 relative inline-block " > <span class="relative text-white " >Image de profile par défaut</span> </p> ';
                 array_push($entry, $entry_value);
             }
             add_user($bdd, $path);
-            $entry_value = '<p  class=" text-xl before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-green-600 relative inline-block" > <span class="relative text-white "> Le formulaire est envoyer </span><p>';
+            $entry_value = '<p  class=" text-xl before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-green-600 relative inline-block" > <span class="relative text-white ">Inscription validé</span><p>';
             array_push($entry, $entry_value);
     
         } else {
-            $entry_value = '<p  class="text-xl before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-red-600 relative inline-block " > <span class="relative text-white " >Désoler une erreur est survenue </span> </p> ';
+            $entry_value = '<p  class="text-xl before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-red-600 relative inline-block " > <span class="relative text-white " >Désoler le mail est déjà utilisé <a href="#" class="text-gray-600"> Oublie ? </a></span> </p> ';
             array_push($entry, $entry_value);
     
         }
         }else{
-            $entry_value = '<p  class="text-xl before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-red-600 relative inline-block " > <span class="relative text-white " >Désoler le mail est déjà utilisé <a href="#" class="text-gray-300"> Oublie ? </a> </span> </p> ';
+            $entry_value = '<p  class="text-xl before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-red-600 relative inline-block " > <span class="relative text-white " >Désoler une erreur est survenue   </span> </p> ';
             array_push($entry, $entry_value);
         }
 

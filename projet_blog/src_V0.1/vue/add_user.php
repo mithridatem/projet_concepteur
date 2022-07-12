@@ -17,13 +17,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inscription</title>
-    <link href="../dist/output.css" rel="stylesheet" />
+    <link href="./dist/output.css" rel="stylesheet" />
 </head>
 
 <body class="relative">
     <nav class="bg-blue-800 w-full h-32 flex pl-5 pr-10 shadow-2xl ">
         <div class="w-1/6 ">
-            <img src="../dist/img/Logo.png" alt="" class="object-contain h-72 justify-start">
+            <img src="./dist/img/Logo.png" alt="" class="object-contain h-72 justify-start">
 
         </div>
         <ul class="flex justify-center  text-white text-2xl h-full items-end w-4/6 pb-5 ">
@@ -70,7 +70,7 @@
                 <input type="submit" value="Valider" class="rounded-full bg-blue-800 text-white h-10 xl:w-1/3 w-2/3 mx-auto mb-10" name="submit" />
             </div>
             <div class="w-2/4 xl:block hidden">
-                <img src="../dist/img/product-launch-in-business-startup.svg" alt="">
+                <img src="./dist/img/product-launch-in-business-startup.svg" alt="">
             </div>
         </div>
     </form>
@@ -101,7 +101,7 @@
             </section>
         </article>
     </section>
-    <script src="../vue/js/modal.js"></script>
+    <script src="./vue/js/modal.js"></script>
 </body>
 
 </html>
