@@ -1,0 +1,16 @@
+body{
+    background-color: #EFEFEF;
+}
+nav{
+    margin-bottom: 3rem;
+}
+#form{
+    padding: 0.5rem;
+    background-color: white;
+    width: 50%;
+    align-self: center;
+    border-radius: 15px;
+    align-items: center;
+    margin-left:auto;
+    margin-right:auto
+}
