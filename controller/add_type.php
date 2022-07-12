@@ -1,7 +1,12 @@
 <?php
+include './utils/utils.php';
 include './view/add_category.php';
+$css = "add_user.css";
+$content = ob_get_clean();
+include './view/template.php';
 include './utils/bdd.php';
 include './model/type.php';
+include './manager/type.php';
 
 
 function validate_post(){
@@ -12,10 +17,11 @@ function validate_post(){
 }
 
 if(validate_post()){
-    addType($bdd);
+    $type = new TypeManager($_POST['name_type']);
+    $type->create($bdd);
     echo"Type crée avec succès";
 }
-else{
+else if(isset($_POST['submit_util'])){
     echo"Erreur! Le nom est manquant.";
 }
 

@@ -1,19 +1,60 @@
 <?php
-function addUser($bdd, $img=""){
-    try{
-        $req = $bdd->prepare('INSERT INTO utilisateur (first_name_util, name_util, mail_util, mdp_util, img_util, statut_util) values (:first_name_util, :name_util, :mail_util, :mdp_util, :img_util, 0);');
-        $req->execute(array(
-            'name_util' => $_POST['name_util'],
-            'first_name_util' => $_POST['first_name_util'],
-            'mail_util' => $_POST['mail_util'],
-            'mdp_util' => password_hash($_POST['pwd_util'], PASSWORD_DEFAULT),
-            'img_util' => $img,
-        ));
+
+
+class User{
+    protected $first_name;
+    protected $name;
+    protected $mail;
+    protected $pwd;
+    protected $img="";
+
+    public function __construct($first_name, $name, $mail, $pwd){
+        $this->first_name = $first_name;
+        $this->name = $name;
+        $this->mail = $mail;
+        $this->pwd = $pwd;
 
     }
-    catch(Exception $e){
-        echo $e;
+
+    public function getName(){
+        return $this->name;
     }
+    
+    public function getFirstName(){
+        return $this->first_name;
+    }
+
+    public function getMail(){
+        return $this->mail;
+    }
+
+    public function getPassword(){
+        return $this->pwd;
+    }
+
+    public function getImage(){
+        return $this->img;
+    }
+
+    public function setName($name){
+        $this->name = $name;
+    }
+    
+    public function setFirstName($first_name){
+        $this->first_name = $first_name;
+    }
+
+    public function setMail($mail){
+        $this->mail = $mail;
+    }
+
+    public function setPassword($pwd){
+        $this->pwd = $pwd;
+    }
+
+    public function setImage($img){
+        $this->img = $img;
+    }    
 }
 
 

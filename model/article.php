@@ -1,17 +1,40 @@
 <?php
-function addArticle($bdd){
-    try{
-        $req = $bdd->prepare('INSERT INTO article (name_art, content_art, date_art, id_type) values (:name_art, :content_art, :date_art, :id_type)');
-        $req->execute(array(
-            'name_art' => $_POST['name_art'],
-            'content_art' => $_POST['content_art'],
-            'date_art' => $_POST['date_art'],
-            'id_type' => $_POST['id_type'],
-        ));
 
+class Article{
+    protected $name_art;
+    protected $content_art;
+    protected $date_art;
+    protected $id_type;
+
+    public function __construct($name, $content, $date, $id_type){
+        $this->name_art = $name;
+        $this->content_art = $content;
+        $this->date_art = $date;
+        $this->id_type = $id_type;
     }
-    catch(Exception $e){
-        echo $e;
+
+    public function getName(){
+        return $this->name_art;
+    }
+    
+    public function getContent(){
+        return $this->content_art;
+    }
+
+    public function getDate(){
+        return $this->date_art;
+    }
+
+    public function setName($name){
+        $this->name_art = $name;
+    }
+
+    public function setContent($content){
+        $this->content_art = $content;
+    }
+
+    public function setDate($date){
+        $this->date_art = $date;
     }
 }
 

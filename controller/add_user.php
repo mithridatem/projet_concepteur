@@ -7,6 +7,7 @@ include './view/template.php';
 include './utils/validator.php';
 include './utils/bdd.php';
 include './model/user.php';
+include './manager/user.php';
 
 
 function validate_post($bdd){
@@ -39,15 +40,21 @@ function validate_post($bdd){
 
 
 if(validate_post($bdd)){
+    $user = new UserManager(
+        $_POST['first_name_util'],
+        $_POST['name_util'],
+        $_POST['mail_util'],
+        $_POST['pwd_util'],
+    );
     if (isset($_FILES['img_util'])){
         $name = $_FILES['img_util']['name'];
         $date = new DateTime();
         $name = $date->getTimestamp().$name;
         $temp = $_FILES['img_util']['tmp_name'];
-        $f = move_uploaded_file($temp, "../asset/$name");
-        addUser($bdd, "../asset/$name");
+        $f = move_uploaded_file($temp, "./asset/$name");
+        $user->setImage("./asset/$name");
     }
-    else addUser($bdd);
+    $user->create($bdd);
     echo"Requête réalisée avec succès";
 } 
 else if(isset($_POST['submit_util'])) echo"<p class='error'>

@@ -1,4 +1,21 @@
 <?php
+
+class Type{
+    protected $name;
+
+    public function __construct($name){
+        $this->name = $name;
+    }
+
+    public function getName(){
+        return $this->name;
+    }
+
+    public function setName($name){
+        $this->name = $name;
+    }
+
+}
 function addType($bdd){
     try{
         $req = $bdd->prepare('INSERT INTO type (name_type) values (:type_name)');

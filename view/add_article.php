@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Ajouter Article</title>
-        <link href="./css/add_user.css" rel="stylesheet" type="text/css">
-    </head>
-    <body>
+<?php ob_start();?>
         <form action="" method="post">
             <p>Titre:</p>
             <input type="text" name="name_art" required/>
             <p>Sujet:</p>
             <select name="id_type">
             <?php
-                    include "./utils/bdd.php";
-                    include "./model/type.php";
+                    include_once "./utils/bdd.php";
+                    include_once "./model/type.php";
                     
                     $data = getAll($bdd, 'type');
                     foreach($data as $k){
@@ -28,6 +22,3 @@
             <input type="date" name="date_art"/>
             <input type="submit" value="Valider" name="submit_util" id="submit" />
         </form>
-    </body>
-</html>
-
