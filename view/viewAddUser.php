@@ -11,7 +11,7 @@
   </head>
   <body>
     <div class="d-flex justify-content-center">
-    <form class="col-6" action="" method="POST">
+    <form class="col-6" action="" method="POST" enctype="multipart/form-data">
       <div class="mb-3">
         <label for="name_util" class="form-label">Name</label>
         <input type="text" class="form-control" id="name_util" name="name_util" >
@@ -27,6 +27,10 @@
       <div class="mb-3">
         <label class="form-label" for="mdp_util">Password</label>
         <input type="password" class="form-control" id=" mdp_util" name="mdp_util">
+      </div>
+      <div class="mb-3">
+        <label for="img_util" class="form-label">Default file input example</label>
+        <input class="form-control" type="file" id="img_util" name="img_util">
       </div>
       <button type="submit" name="submit" class="btn btn-primary">Submit</button>
     </form>
