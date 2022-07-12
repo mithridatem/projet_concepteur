@@ -36,7 +36,7 @@
     <p><input type="text" name="mail_util"></p>
     <p>Password:</p>
     <p><input type="password" name="mdp_util"></p>
-    <p><input type="file" name="file"></p>
+    <p><input type="file" name="img_util"></p>
     <p><input type="submit" value="Envoyer" name="bt"></p>
 </form>
 </body>
