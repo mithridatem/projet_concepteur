@@ -1,8 +1,8 @@
 <?php
     $date = date("Y-m-d");
-    include '../view/viewAddArticle.php';
-    include '../utils/connectBdd.php';
-    include '../model/article.php';
+    include './view/viewAddArticle.php';
+    include './utils/connectBdd.php';
+    include './model/article.php';
     //test si submit à été cliqué
     if(isset($_POST['bt'])){
         //test si les champs sont remplis

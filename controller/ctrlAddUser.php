@@ -1,8 +1,8 @@
 <?php
     //imports
-    include '../view/viewAddUser.php';
-    include '../utils/connectBdd.php';
-    include '../model/utilisateur.php';
+    include './view/viewAddUser.php';
+    include './utils/connectBdd.php';
+    include './model/utilisateur.php';
     $file = "defaut.jpg";
     //test vérifier le contenu des inputs
     //test si submit à été cliqué
