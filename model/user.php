@@ -33,7 +33,7 @@ function getAllUser($bdd){
 
 function deleteUser($bdd){
     try{
-        $req = $bdd->prepare('DELETE * FROM utilisateur WHERE id_util=:id_util');
+        $req = $bdd->prepare('DELETE FROM utilisateur WHERE id_util=:id_util');
         $req->execute(array('id_util' => $_POST['id_util']));
         $data = $req->fetchAll(PDO::FETCH_OBJ);
         return $data;

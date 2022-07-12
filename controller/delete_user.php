@@ -2,7 +2,7 @@
 include '../utils/utils.php';
 include '../view/delete_user.php';
 include '../utils/bdd.php';
-include '../model/user.php';
+include_once '../model/user.php';
 
 
 function validate_post(){
