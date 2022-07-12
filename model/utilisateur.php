@@ -18,4 +18,37 @@
             die('Erreur : '.$e->getMessage());
         }
     }
+    function getAllUserbyMail($bdd):bool{
+        try{
+            $req = $bdd->prepare("SELECT * FROM utilisateur where mail_util =:mail_util limit");
+            $req->execute(array(
+                'mail_util'=>$_POST['mail_util'],
+            ));
+            $data = $req->fetchAll(PDO::FETCH_OBJ);
+            if(isset($data)){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        catch(Exception $e)
+        {
+            //affichage d'une exception en cas d’erreur
+            die('Erreur : '.$e->getMessage());
+        }
+    } 
+    function getAllUser($bdd):array{
+        try{
+            $req = $bdd->prepare("SELECT * FROM utilisateur");
+            $req->execute();
+            $data = $req->fetchAll(PDO::FETCH_OBJ);
+            return $data;
+        }
+        catch(Exception $e)
+        {
+            //affichage d'une exception en cas d’erreur
+            die('Erreur : '.$e->getMessage());
+        }
+    }       
 ?>
