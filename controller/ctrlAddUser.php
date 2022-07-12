@@ -1,9 +1,11 @@
 <?php
     //imports
-    include '../view/viewAddUser.php';
-    include '../utils/connectBdd.php';
-    include '../model/utilisateur.php';
+    include './view/viewAddUser.php';
+    include './utils/connectBdd.php';
+    include './model/utilisateur.php';
+    include './manager/ManageUtilisateur.php';
     $file = "default.jpg";
+    $userBean= new ManagerUtilisateur();
     //test vérifier le contenu des inputs
     //test si submit à été cliqué
     if(isset($_POST['submit'])){
@@ -17,10 +19,10 @@
                 $error = $_FILES['img_util']['error'];
                 $file = "../asset/images/$name";
                 $fichier = move_uploaded_file($tmpName, $file);
-                addUser($bdd,$name);
+                $userBean->addUser($bdd,$name);
             }
             else{
-                addUser($bdd,$file);
+                $userbean->addUser($bdd,$file);
             }
             echo "l'utilisateur suivant à été ajouté : ".$_POST['name_util']. " ". $_POST['first_name_util'];
         }
@@ -32,7 +34,7 @@
         echo "veuillez compléter le formulaire";
     }
 
-    $tab = getAllUser($bdd);
+    $tab = $userBean->getAllUser($bdd);
     foreach($tab as $value){
         echo $value->name_util."<br>";
     } 

@@ -24,10 +24,13 @@
           </thead>
           <tbody>
             <?php
-              include '../model/article.php';
-              include '../utils/connectBdd.php';
+              include './model/article.php';
+              include './manager/ManageArticle.php';
+              include './utils/connectBdd.php';
 
-              $articles = getAllArticle($bdd);
+              $articleBean = new ManagerArticle();
+
+              $articles = $articleBean->getAllArticle($bdd);
 
               if($articles){
                 foreach($articles as $key=>$article){
