@@ -814,20 +814,20 @@ select {
   margin-top: 5rem;
 }
 
-.ml-5 {
-  margin-left: 1.25rem;
-}
-
 .ml-10 {
   margin-left: 2.5rem;
 }
 
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
 .mt-5 {
   margin-top: 1.25rem;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
+.mt-40 {
+  margin-top: 10rem;
 }
 
 .block {
@@ -870,24 +870,6 @@ select {
   height: 100vh;
 }
 
-.h-2\/4 {
-  height: 50%;
-}
-
-.h-1\/4 {
-  height: 25%;
-}
-
-.h-min {
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content;
-}
-
-.h-40 {
-  height: 10rem;
-}
-
 .h-60 {
   height: 15rem;
 }
@@ -928,20 +910,16 @@ select {
   width: 33.333333%;
 }
 
-.w-20 {
-  width: 5rem;
+.w-64 {
+  width: 16rem;
 }
 
 .w-32 {
   width: 8rem;
 }
 
-.w-64 {
-  width: 16rem;
-}
-
-.w-10 {
-  width: 2.5rem;
+.w-2\/3 {
+  width: 66.666667%;
 }
 
 .min-w-max {
@@ -965,10 +943,6 @@ select {
 
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-
-.flex-row {
-  flex-direction: row;
 }
 
 .flex-col {
@@ -1196,10 +1170,6 @@ select {
   text-align: center;
 }
 
-.align-middle {
-  vertical-align: middle;
-}
-
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
@@ -1259,12 +1229,24 @@ select {
   color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
-.accent-emerald-500\/25 {
-  accent-color: rgb(16 185 129 / 0.25);
+.text-blue-800 {
+  --tw-text-opacity: 1;
+  color: rgb(30 64 175 / var(--tw-text-opacity));
 }
 
-.opacity-100 {
-  opacity: 1;
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+
+.text-gray-600 {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+
+.text-gray-300 {
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
 }
 
 .shadow-lg {
@@ -1426,8 +1408,50 @@ select {
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
+@media (min-width: 640px) {
+  .sm\:hidden {
+    display: none;
+  }
+
+  .sm\:w-2\/3 {
+    width: 66.666667%;
+  }
+
+  .sm\:flex-col {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:hidden {
+    display: none;
+  }
+}
+
 @media (min-width: 1024px) {
   .lg\:mt-0 {
     margin-top: 0px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:visible {
+    visibility: visible;
+  }
+
+  .xl\:block {
+    display: block;
+  }
+
+  .xl\:w-2\/4 {
+    width: 50%;
+  }
+
+  .xl\:w-3\/5 {
+    width: 60%;
+  }
+
+  .xl\:w-1\/3 {
+    width: 33.333333%;
   }
 }
