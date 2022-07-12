@@ -1,0 +1,24 @@
+<?php
+include '../utils/utils.php';
+include '../view/delete_user.php';
+include '../utils/bdd.php';
+include '../model/user.php';
+
+
+function validate_post(){
+    if(!isset($_POST['submit_util'])) return false;
+    if(empty($_POST['id_util'])) {
+        echo"<p class='error'>Veuillez sélectionner un utilisateur</p>";
+        return false;
+    }
+    return true;
+}
+
+
+if(validate_post()){
+    deleteUser($bdd);
+    echo"Requête réalisée avec succès";
+} 
+else if(isset($_POST['submit_util'])) echo"<p class='error'>
+    Veuillez compléter le formulaire</p>";
+?>

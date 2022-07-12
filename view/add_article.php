@@ -16,8 +16,8 @@
                     
                     $data = getAllType($bdd);
                     foreach($data as $k){
-                        $type = $k['name_type'];
-                        $id = $k['id_type'];
+                        $type = $k->name_type;
+                        $id = $k->id_type;
                         echo"<option value='$id'>$type</option>";
                     }
                 ?>

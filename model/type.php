@@ -16,7 +16,7 @@ function getAllType($bdd){
     try{
         $req = $bdd->prepare('SELECT * FROM type');
         $req->execute();
-        $data = $req->fetchAll(PDO::FETCH_ASSOC);
+        $data = $req->fetchAll(PDO::FETCH_OBJ);
         return $data;
         }
         catch(Exception $e)

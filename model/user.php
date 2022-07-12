@@ -15,4 +15,46 @@ function addUser($bdd, $img=""){
         echo $e;
     }
 }
+
+
+function getAllUser($bdd){
+    try{
+        $req = $bdd->prepare('SELECT * FROM utilisateur');
+        $req->execute();
+        $data = $req->fetchAll(PDO::FETCH_OBJ);
+        return $data;
+    }
+    catch(Exception $e){
+        //affichage d'une exception en cas d’erreur
+        die('Erreur : '.$e->getMessage());
+    }
+}
+
+
+function deleteUser($bdd){
+    try{
+        $req = $bdd->prepare('DELETE * FROM utilisateur WHERE id_util=:id_util');
+        $req->execute(array('id_util' => $_POST['id_util']));
+        $data = $req->fetchAll(PDO::FETCH_OBJ);
+        return $data;
+    }
+    catch(Exception $e){
+        //affichage d'une exception en cas d’erreur
+        die('Erreur : '.$e->getMessage());
+    }
+}
+
+
+function userDoesExist($bdd){
+    try{
+        $req = $bdd->prepare('SELECT * FROM utilisateur WHERE mail_util=:mail_util');
+        $req->execute(array('mail_util' => $_POST['mail_util']));
+        $data = $req->fetchAll(PDO::FETCH_OBJ);
+        return !empty($data);
+    }
+    catch(Exception $e){
+        //affichage d'une exception en cas d’erreur
+        die('Erreur : '.$e->getMessage());
+    }
+}
 ?>
