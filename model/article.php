@@ -14,4 +14,34 @@ function addArticle($bdd){
         echo $e;
     }
 }
+
+
+function getAllArticle($bdd){
+    try{
+        $req = $bdd->prepare('SELECT * FROM article');
+        $req->execute();
+        $data = $req->fetchAll(PDO::FETCH_OBJ);
+        return $data;
+    }
+    catch(Exception $e){
+        //affichage d'une exception en cas d’erreur
+        die('Erreur : '.$e->getMessage());
+    }
+}
+
+
+function getArticle($bdd){
+    try{
+        $req = $bdd->prepare('SELECT * FROM article WHERE id_article=:id_article');
+        $req->execute(array(
+            'id_article' => $_POST['id_article']
+        ));
+        $data = $req->fetchAll(PDO::FETCH_OBJ);
+        return $data;
+    }
+    catch(Exception $e){
+        //affichage d'une exception en cas d’erreur
+        die('Erreur : '.$e->getMessage());
+    }
+}
 ?>
