@@ -16,6 +16,8 @@ function validate_post(){
 
 
 if(validate_post()){
+    $img = getUser($bdd, $_POST['id_util'])[0]->img_util;
+    unlink("../asset/$img");
     deleteUser($bdd);
     echo"Requête réalisée avec succès";
 } 

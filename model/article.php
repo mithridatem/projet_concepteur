@@ -30,11 +30,11 @@ function getAllArticle($bdd){
 }
 
 
-function getArticle($bdd){
+function getArticle($bdd, $id_art){
     try{
         $req = $bdd->prepare('SELECT * FROM article WHERE id_art=:id_art');
         $req->execute(array(
-            'id_art' => $_POST['id_art']
+            'id_art' => $id_art
         ));
         $data = $req->fetchAll(PDO::FETCH_OBJ);
         return $data;

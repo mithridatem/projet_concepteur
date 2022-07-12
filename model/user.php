@@ -30,6 +30,21 @@ function getAllUser($bdd){
     }
 }
 
+function getUser($bdd, $id){
+    try{
+        $req = $bdd->prepare('SELECT * FROM utilisateur where id_util=:id_util');
+        $req->execute(
+            array('id_util'=>$id)
+        );
+        $data = $req->fetchAll(PDO::FETCH_OBJ);
+        return $data;
+    }
+    catch(Exception $e){
+        //affichage d'une exception en cas d’erreur
+        die('Erreur : '.$e->getMessage());
+    }
+}
+
 
 function deleteUser($bdd){
     try{

@@ -17,7 +17,7 @@ function validate_post($bdd){
         ],
         $_POST
         )
-    ) return false;
+    )return false;
     if(!email_validator($_POST['mail_util'])) {
         echo"<p class='error'>Email invalide</p>";
         return false;
@@ -28,9 +28,9 @@ function validate_post($bdd){
             une minuscule et un caractère spécial.</p>";
         return false;
     }
-    if(userDoesExist($bdd))echo"<p class='error'>
+    if(userDoesExist($bdd)){echo"<p class='error'>
         Cet utilisateur existe déjà! </p>";
-return false;
+        return false;}
     return true;
 }
 
