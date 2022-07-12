@@ -20,7 +20,7 @@
     }
     function getAllUserbyMail($bdd):bool{
         try{
-            $req = $bdd->prepare("SELECT * FROM utilisateur where mail_util =:mail_util limit");
+            $req = $bdd->prepare("SELECT * FROM utilisateur where mail_util =:mail_util limit 1");
             $req->execute(array(
                 'mail_util'=>$_POST['mail_util'],
             ));

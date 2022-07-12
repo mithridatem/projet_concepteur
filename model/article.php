@@ -1,21 +1,50 @@
 <?php
-    //fonction ajouter un article
-    function addArticle($bdd, $date){
-        try{
-            $req = $bdd->prepare("insert into article(name_art, content_art, date_art) values
-            (:name_art, :content_art, :date_art)");
-            $req->execute(array(
-                'name_art' => $_POST['name_art'],
-                'content_art' => $_POST['content_art'],
-                'date_art' => $date,
-            ));
+    class Article{
+        //attributs
+        private $id_art;
+        private $name_art;
+        private $content_art;
+        private $date_art;
+        private $id_type;
+        //constructeur
+        public function __construct(){  
         }
-        catch(Exception $e)
-        {
-            //affichage d'une exception en cas d’erreur
-            die('Erreur : '.$e->getMessage());
+        //getter and setter
+        public function getIdArt():int{
+            return $this->id_art;
         }
+        public function getNameArt():string{
+            return $this->name_art;
+        }
+        public function getContentArt():string{
+            return $this->content_art;
+        }
+        public function getDateArt():string{
+            return $this->date_art;
+        }
+        public function getIdType():int{
+            return $this->id_role;
+        }
+        public function setIdArt($id):int{
+            $this->id_art;
+        }
+        public function setNameArt($name){
+            $this->name_art = $name;
+        }
+        public function setContentArt($content){
+            $this->content_art = $content;
+        }
+        public function setDateArt($date){
+            $this->date_art = $date;
+        }
+        public function setIdType($id){
+            $this->id_type = $id;
+        }
+        
     }
+    
+
+    
     //fonction récupérer la liste des articles (tableau d'objets)
     function getAllArticle($bdd):array{
         try{

@@ -18,7 +18,12 @@
     case $path === "/cda/allArticle":
     include './controller/ctrlShowAllArticle.php';
     break ;
+
+    case $path === "/cda/animal":
+    include './controller/ctrlAnimal.php';
+    break ;
     
+
     case $path !=='';
     include './error.php';
     break;
