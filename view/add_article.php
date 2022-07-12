@@ -5,7 +5,8 @@
             <p>Sujet:</p>
             <select name="id_type">
             <?php
-                    include_once "./utils/bdd.php";
+                    include_once './utils/bdd.php';
+                    $bdd = BDD::getBDD();
                     include_once "./model/type.php";
                     
                     $data = getAll($bdd, 'type');

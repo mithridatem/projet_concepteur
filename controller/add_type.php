@@ -1,10 +1,11 @@
 <?php
+include_once './utils/bdd.php';
+$bdd = BDD::getBDD();
 include './utils/utils.php';
 include './view/add_category.php';
 $css = "add_user.css";
 $content = ob_get_clean();
 include './view/template.php';
-include './utils/bdd.php';
 include './model/type.php';
 include './manager/type.php';
 

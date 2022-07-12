@@ -1,6 +1,7 @@
 <?php
-include './utils/utils.php';
 include_once './utils/bdd.php';
+$bdd = BDD::getBDD();
+include './utils/utils.php';
 include_once './model/user.php';
 include './view/delete_user.php';
 $css = "add_user.css";

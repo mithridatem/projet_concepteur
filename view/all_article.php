@@ -6,7 +6,8 @@ ob_start();
 ?>
             <div>
                 <?php
-                        include "./utils/bdd.php";
+                        include_once './utils/bdd.php';
+                        $bdd = BDD::getBDD();
                         include "./model/article.php";
                         $data = getAllArticle($bdd);
                         foreach($data as $k){
