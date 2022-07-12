@@ -1,7 +1,7 @@
 <?php
-include '../view/add_category.php';
-include '../utils/bdd.php';
-include '../model/type.php';
+include './view/add_category.php';
+include './utils/bdd.php';
+include './model/type.php';
 
 
 function validate_post(){

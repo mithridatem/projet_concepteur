@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Ajouter Article</title>
-        <link href="./css/all_article.css" rel="stylesheet" type="text/css">
-    </head>
-    <body>
+<?php 
+$css = "all_article.css";
+$content = "";
+include 'view/template.php';
+ob_start();
+?>
             <div>
                 <?php
-                        include "../utils/bdd.php";
-                        include "../model/article.php";
+                        include "./utils/bdd.php";
+                        include "./model/article.php";
                         $data = getAllArticle($bdd);
                         foreach($data as $k){
                             $titre = $k->name_art;
@@ -25,4 +24,3 @@
                         }
                     ?>
             </div>
-    </body>

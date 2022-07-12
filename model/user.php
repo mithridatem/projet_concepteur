@@ -17,19 +17,6 @@ function addUser($bdd, $img=""){
 }
 
 
-function getAllUser($bdd){
-    try{
-        $req = $bdd->prepare('SELECT * FROM utilisateur');
-        $req->execute();
-        $data = $req->fetchAll(PDO::FETCH_OBJ);
-        return $data;
-    }
-    catch(Exception $e){
-        //affichage d'une exception en cas d’erreur
-        die('Erreur : '.$e->getMessage());
-    }
-}
-
 function getUser($bdd, $id){
     try{
         $req = $bdd->prepare('SELECT * FROM utilisateur where id_util=:id_util');

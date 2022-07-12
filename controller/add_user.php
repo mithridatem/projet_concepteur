@@ -1,9 +1,12 @@
 <?php
-include '../utils/utils.php';
-include '../view/add_user.php';
-include '../utils/validator.php';
-include '../utils/bdd.php';
-include '../model/user.php';
+include './utils/utils.php';
+include './view/add_user.php';
+$css = "add_user.css";
+$content = ob_get_clean();
+include './view/template.php';
+include './utils/validator.php';
+include './utils/bdd.php';
+include './model/user.php';
 
 
 function validate_post($bdd){

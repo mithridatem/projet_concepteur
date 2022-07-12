@@ -11,10 +11,10 @@
             <p>Sujet:</p>
             <select name="id_type">
             <?php
-                    include "../utils/bdd.php";
-                    include "../model/type.php";
+                    include "./utils/bdd.php";
+                    include "./model/type.php";
                     
-                    $data = getAllType($bdd);
+                    $data = getAll($bdd, 'type');
                     foreach($data as $k){
                         $type = $k->name_type;
                         $id = $k->id_type;

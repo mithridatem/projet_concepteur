@@ -1,8 +1,11 @@
 <?php 
-include '../utils/utils.php';
-include '../view/add_article.php';
-include '../utils/bdd.php';
-include '../model/article.php';
+include './utils/utils.php';
+include './view/add_article.php';
+$css = "add_user.css";
+$content = ob_get_clean();
+include './view/template.php';
+include './utils/bdd.php';
+include './model/article.php';
 
 
 if(isset($_POST['submit_util']) && 

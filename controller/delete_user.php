@@ -1,10 +1,11 @@
 <?php
-include '../utils/utils.php';
-include '../view/delete_user.php';
-include '../utils/bdd.php';
-include_once '../model/user.php';
-
-
+include './utils/utils.php';
+include_once './utils/bdd.php';
+include_once './model/user.php';
+include './view/delete_user.php';
+$css = "add_user.css";
+$content = ob_get_clean();
+include './view/template.php';
 function validate_post(){
     if(!isset($_POST['submit_util'])) return false;
     if(empty($_POST['id_util'])) {
