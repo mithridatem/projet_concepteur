@@ -18,7 +18,7 @@ function addArticle($bdd){
 
 function getAllArticle($bdd){
     try{
-        $req = $bdd->prepare('SELECT * FROM article');
+        $req = $bdd->prepare('SELECT article.name_art, article.date_art, article.content_art, type.name_type FROM article LEFT JOIN type ON article.id_type=type.id_type');
         $req->execute();
         $data = $req->fetchAll(PDO::FETCH_OBJ);
         return $data;
