@@ -23,7 +23,7 @@
             return $this->date_art;
         }
         public function getIdType():int{
-            return $this->id_role;
+            return $this->id_type;
         }
         public function setIdArt($id):int{
             $this->id_art;

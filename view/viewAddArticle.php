@@ -6,12 +6,23 @@
     <title>Ajouter un article</title>
 </head>
 <body>
+    
     <h3>Ajouter un article :</h3>
     <form action="" method="post">
         <p><input type="text" name="name_art"></p>
         <p><input type="text" name="content_art"></p>
         <p><input type="date" name="date_art"></p>
-        <p><input type="submit" value="Envoyer" name="bt"></p>
+        <select name="id_type">
+    <?php    //création de la liste déroulante
+        $type = new ManagerType();
+        $liste = $type->getAlltype($bdd);
+        //var_dump($liste);
+        foreach($liste as $value){
+            echo '<option value="'.$value->id_type.'">'.$value->name_type.'</option>';
+        }
+    ?>
+    </select>
+    <p><input type="submit" value="Envoyer" name="bt"></p>
     </form>
-</body>
-</html>
+    </body>
+    </html>

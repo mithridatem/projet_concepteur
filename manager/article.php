@@ -7,12 +7,13 @@
         //fonction ajouter un article
         public function addArticle($bdd, $date){
             try{
-                $req = $bdd->prepare("insert into article(name_art, content_art, date_art) values
-                (:name_art, :content_art, :date_art)");
+                $req = $bdd->prepare("insert into article(name_art, content_art, date_art, id_type) values
+                (:name_art, :content_art, :date_art, :id_type)");
                 $req->execute([
                     'name_art' => $this->getNameArt(),
                     'content_art' => $this->getContentArt(),
                     'date_art' => $date,
+                    'id_type' => $this->getIdType(),
                 ]);
             }
             catch(Exception $e)

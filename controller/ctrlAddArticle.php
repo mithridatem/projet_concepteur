@@ -1,9 +1,12 @@
 <?php
     $date = date("Y-m-d");
-    include './view/viewAddArticle.php';
     include './utils/connectBdd.php';
     include './model/article.php';
     include './manager/article.php';
+    include './model/type.php';
+    include './manager/type.php';
+    include './view/viewAddArticle.php';
+    
     //test connexion
     if(!isset($_SESSION['connected'])){
         header('location: connexion?error=interdit');
@@ -15,17 +18,18 @@
             $art = new ManagerArticle();
             $art->setNameArt($_POST['name_art']);
             $art->setcontentArt($_POST['content_art']);
+            $art->setIdType($_POST['id_type']);
             //test si date vide
             if(empty($_POST['date_art'])){
                 $date_art = $date;
                 $art->addArticle($bdd, $date_art);
-                echo "article : ".$art->getNameArtmArt(). " date : " .$date_art; 
+                echo "article : ".$art->getNameArt(). " date : " .$date_art; 
             }
             //si l'utilisateur à choisi une date
             else{
                 $date_art = $_POST['date_art'];
                 $art->addArticle($bdd, $date_art);
-                echo "article : ".$art->getNameArtmArt(). " date : " .$date_art; 
+                echo "article : ".$art->getNameArt(). " date : " .$date_art; 
             }
         }
         //test si les champs ne sont pas remplis
