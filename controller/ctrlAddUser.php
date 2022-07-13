@@ -1,10 +1,11 @@
 <?php
     //imports
-    include './view/viewAddUser.php';
     include './utils/connectBdd.php';
     include './model/utilisateur.php';
     include './manager/utilisateur.php';
     $file = "./asset/images/defaut.jpg";
+    include './view/viewAddUser.php';
+    
     //test vérifier le contenu des inputs
     //test si submit à été cliqué
     if(isset($_POST['bt'])){

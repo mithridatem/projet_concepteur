@@ -4,7 +4,7 @@
     include './manager/article.php';
     include './utils/connectBdd.php';
     include './view/viewArticleById.php';
-
+    //test si l'id de l'article existe
     if(isset($_GET['id']) AND !empty($_GET['id'])){
         $art = new ManagerArticle();
         $art->setIdArt($_GET['id']);
