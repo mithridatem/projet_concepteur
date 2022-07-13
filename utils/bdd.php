@@ -3,6 +3,7 @@
 class BDD{
     private $bdd = null;
     private static $instances = [];
+    
     private function __construct(){
         $data = file_get_contents('./secret.json'); 
         // JSON decode

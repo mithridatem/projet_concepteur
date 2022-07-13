@@ -7,6 +7,7 @@ class User{
     protected $mail;
     protected $pwd;
     protected $img="";
+    protected $id_role=0;
 
     public function __construct($first_name, $name, $mail, $pwd){
         $this->first_name = $first_name;
@@ -54,7 +55,7 @@ class User{
 
     public function setImage($img){
         $this->img = $img;
-    }    
+    }
 }
 
 
@@ -73,6 +74,20 @@ function getUser($bdd, $id){
     }
 }
 
+function getUserByMail($bdd, $mail){
+    try{
+        $req = $bdd->prepare('SELECT * FROM utilisateur where mail_util=:mail_util');
+        $req->execute(
+            ['mail_util'=>$mail]
+        );
+        $data = $req->fetchAll(PDO::FETCH_OBJ);
+        return $data;
+    }
+    catch(Exception $e){
+        //affichage d'une exception en cas d’erreur
+        die('Erreur : '.$e->getMessage());
+    }
+}
 
 function deleteUser($bdd){
     try{

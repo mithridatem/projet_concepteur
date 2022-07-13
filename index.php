@@ -1,8 +1,13 @@
 <?php
+session_start();
 $url = parse_url($_SERVER['REQUEST_URI']);
 //test soit l'url a une route sinon on renvoi à la racine
 $path = isset($url['path']) ? $url['path'] : '/';
+if(!isset($_SESSION['user']))$path = '/projet/connect';
 switch($path){
+    case $path === "/projet/connect":
+        include './controller/connect.php';
+       break ;
     case $path === "/projet/add_user":
     include './controller/add_user.php';
    break ;
