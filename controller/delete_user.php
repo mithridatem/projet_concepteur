@@ -4,8 +4,8 @@ $bdd = BDD::getBDD();
 include './utils/utils.php';
 include_once './model/user.php';
 include './view/delete_user.php';
-$css = "add_user.css";
 $nav = true;
+$css = "form_only.css";
 $content = ob_get_clean();
 include './view/template.php';
 function validate_post(){

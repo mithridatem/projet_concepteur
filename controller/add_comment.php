@@ -13,28 +13,24 @@ include_once './manager/comment.php';
 
 
 function validate_post(){
-    
-    if(!isset($_GET['id'])) {echo"idpb";return false;}
-    if(!isset($_POST['submit'])) {echo"submitpb";return false;}
+    if(!isset($_GET['id'])) {echo"Error!";return false;}
+    if(!isset($_POST['submit'])) {return false;}
     if(!has_all_args(
         [
             'comment'
         ],
         $_POST
         )
-    ){echo"argpb";return false;}
-    if(!isset($_SESSION['user'])){echo"userpb";return false;}
+    ){echo"Veuillez remplir le commentaire";return false;}
+    if(!isset($_SESSION['user'])){echo"Vousdevez être connecté";return false;}
     return true;
 }
 
 
 if(validate_post()){
     echo"success";
-    $_POST['date'] = !empty($_POST['date'])? 
-        $_POST['date'] : 
-        date('Y-m-d');
+    $_POST['date'] = date('Y-m-d');
     $comment = new CommentManager($_SESSION['user']->id_util, $_POST['comment'], $_GET['id'], $_POST['date']);
     $comment->create($bdd);
 }
-
 ?>

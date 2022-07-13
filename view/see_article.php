@@ -43,11 +43,9 @@ ob_start();
                             if(isset($_SESSION['user'])){
                                 echo'
                                 <form action="" method="post">
-                                    <h4>Date:</h4>
-                                    <input type="date" name="date"/>
                                     <h4>Commentaire:</h4>
                                     <textarea name="comment"></textarea>
-                                    <input type="submit" name="submit"/>
+                                    <input type="submit" name="submit" id="submit"/>
                                 </form>';
                             }
                             

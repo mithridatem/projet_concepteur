@@ -3,7 +3,6 @@ form{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
  #submit{
     margin-top: 2vh;

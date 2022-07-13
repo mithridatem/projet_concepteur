@@ -3,7 +3,7 @@ include_once './utils/bdd.php';
 $bdd = BDD::getBDD();
 include './utils/utils.php';
 include './view/connect.php';
-$css = "add_user.css";
+$css = "form_only.css";
 $content = ob_get_clean();
 include './view/template.php';
 include './model/user.php';
@@ -36,7 +36,7 @@ function validate_post($bdd){
 if(validate_post($bdd)){
     global $user;
     $_SESSION['user'] = $user;
-    header('location: /projet/all_article');
+    header('location: /projet/');
 }
 
 ?>

@@ -3,11 +3,15 @@
     <head>
         <title>Ajouter Article</title>
         <link href="./css/nav.css" rel="stylesheet" type="text/css">
+        <link href="./css/base.css" rel="stylesheet" type="text/css">
         <link href="./css/<?=$css?>" rel="stylesheet" type="text/css">
     </head>
     <body>
         <?php if(isset($nav)){
-            $menu = '<nav>';
+            $menu = '<nav>
+            <a href="/projet/">
+                Tous les articles
+            </a>';
             if(isset($_SESSION['user']))
                 $menu = $menu.'
                 <a href="/projet/add_article">
