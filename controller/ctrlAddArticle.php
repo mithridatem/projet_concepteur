@@ -1,6 +1,6 @@
 
 <?php
-include '../view/viewAddArticle.php';
+include './view/viewAddArticle.php';
 
 if(isset($_POST['submit'])){
 
