@@ -18,9 +18,9 @@
             <div class="grid grid-cols-1 gap-6">
                 <label class="block">
                     <span class="text-gray-700">Article name</span>
-                    <input type="text" class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black" placeholder="Your name" name="name_art" />
+                    <input type="text" class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black" placeholder="Nom de l'article" name="name_art" />
                 </label>
-      
+
 
                 <span class="text-gray-700">Dans quel catégorie</span>
                 <select class="
@@ -30,16 +30,13 @@
                     px-0.5
                     border-0 border-b-2 border-gray-200
                     focus:ring-0 focus:border-black
-                  " name="type">
-                    <option>HTML/CSS</option>
-                    <option>PHP</option>
-                    <option>JavaScript</option>
-                    <option>Other</option>
+                  " name="id_type">
+                    <?= $options ?>
                 </select>
 
                 <span class="text-gray-700">Une date</span>
                 <input type="date" class="mt-1 block w-full" name="date_art">
-              
+
                 <span class="text-gray-700">Votre article</span>
                 <textarea class="
                     mt-0
@@ -49,14 +46,15 @@
                     border-0 border-b-2 border-gray-200
                     focus:ring-0 focus:border-black
                   " rows="2" name="content_art">
-                
+
                 </textarea>
 
-           
-                <input type="submit" value="submit" class="rounded-full bg-blue-800 text-white h-10" name="submit"/>
+
+                <input type="submit" value="submit" class="rounded-full bg-blue-800 text-white h-10" name="submit" />
             </div>
         </div>
     </form>
+    <?= $message ?>
 </body>
 
 </html>

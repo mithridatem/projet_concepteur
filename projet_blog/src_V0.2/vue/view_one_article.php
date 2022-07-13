@@ -1,0 +1,1 @@
+<a href="./addComment?id=<?= $_GET["id"] ?>"><button class="rounded-full bg-blue-800 text-white h-10 w-1/3 mx-auto mt-5">Ajouter un commentaire</button></a>

@@ -4,7 +4,6 @@ let connexionSelector = document.querySelector(".modal-button-js");
 let modalSelector = document.querySelector(".modal-connexion-js");
 
 connexionSelector.addEventListener("click", function(){
-    console.log("hello");
     modalSelector.classList.remove("hidden");
 })
 

@@ -4,13 +4,15 @@ class Manager_article extends Article
     function add_article($bdd)
     {
         try {
-            $req = $bdd->prepare("INSERT INTO article(name_art, content_art, date_art) VALUE
-            (:name_art, :content_art, :date_art)");
+            $req = $bdd->prepare("INSERT INTO article(name_art, content_art, date_art, id_type) VALUE
+            (:name_art, :content_art, :date_art, :id_type)");
 
             $req->execute([
                 'name_art' => $this->get_name_art(),
                 'content_art' => $this->get_content_art(),
                 'date_art' => $this->get_date_art(),
+                'id_type' => $this->get_id_type(),
+
             ]);
         } catch (Exception $e) {
             die('Erreur dans la requete:' . $e->getMessage());
@@ -23,7 +25,7 @@ class Manager_article extends Article
         $req->execute([
             'id_art' => $id,
         ]);
-        $data = $req->fetchAll(PDO::FETCH_OBJ);
+        $data = $req->fetch(PDO::FETCH_OBJ);
         return $data;
     }
     

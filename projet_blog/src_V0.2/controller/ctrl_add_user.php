@@ -1,5 +1,6 @@
 <?php
-
+$content_title = "Crée mon";
+$title = "compte";
 include './vue/add_user.php';
 include './utils/connect_bdd.php';
 include './model/User.php';

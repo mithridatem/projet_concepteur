@@ -4,18 +4,24 @@ include './model/User.php';
 include './utils/connect_bdd.php';
 include './manager/Manager_user.php';
 
+$content_title = "Interface de ";
+$title = "Connexion";
+
 if(isset($_GET['error'])  AND $_GET['error'] === '1'){
     echo 'vous êtes connecter <br/>';
 
 }
+
 if(isset($_GET['error'])  AND $_GET['error'] === '2'){
     echo 'erreur de mot de passe <br/>';
 
 }
+
 if(isset($_GET['error'])  AND $_GET['error'] === '3'){
     echo 'erreur le mail n\'existe pas <br/>';
 
 }
+
 #Verification que l'utilisateur à bien appuyer sur le boutton
 
 if(isset($_POST['submit'])){
@@ -40,3 +46,4 @@ if(isset($_POST['submit'])){
         
     }
 }
+
