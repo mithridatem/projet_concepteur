@@ -7,7 +7,8 @@ class User{
     protected $mail;
     protected $pwd;
     protected $img="";
-    protected $id_role=0;
+    protected $statut_util=true;
+    protected $id_role=1;
 
     public function __construct($first_name, $name, $mail, $pwd){
         $this->first_name = $first_name;
