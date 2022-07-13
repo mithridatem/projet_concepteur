@@ -25,8 +25,8 @@
         public function getIdType():int{
             return $this->id_type;
         }
-        public function setIdArt($id):int{
-            $this->id_art;
+        public function setIdArt($id){
+            $this->id_art = $id;
         }
         public function setNameArt($name){
             $this->name_art = $name;

@@ -37,11 +37,11 @@
             }
         }
         //fonction récupérer un article (tableau d'objet)
-        public function getArticleById($bdd,$id):array{
+        public function getArticleById($bdd):array{
             try{
-                $req = $bdd->prepare("SELECT * FROM article where id_art =:id_art");
+                $req = $bdd->prepare("SELECT * FROM article where id_art =:id_art LIMIT 1");
                 $req->execute([
-                    'id_art' =>$id,
+                    'id_art' =>$this->getIdArt(),
                 ]);
                 $data = $req->fetchAll(PDO::FETCH_OBJ);
                 return $data;

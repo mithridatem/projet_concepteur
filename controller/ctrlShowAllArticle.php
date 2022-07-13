@@ -7,6 +7,7 @@
     $art = new ManagerArticle();
     //var_dump($art->getAllArticle($bdd));
     foreach($art->getAllArticle($bdd) as $value){
-        echo '<a href="allArticle?id='.$value->id_art.'">'.$value->name_art."</a> date : ".$value->date_art. "<br>";
+        echo '<a href="showArtById?id='.$value->id_art.'">'.$value->name_art."
+        </a> date : ".$value->date_art. "<br>";
     }
 ?>

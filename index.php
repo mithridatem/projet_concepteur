@@ -26,6 +26,9 @@
     case $path === "/cda/deco":
         include './controller/ctrlDeconnexion.php';
         break;
+    case $path === "/cda/showArtById":
+        include './controller/ctrlShowArticleById.php';
+        break;
     
     case $path !=='';
         include './error.php';
