@@ -28,10 +28,10 @@
             ));
             $data = $req->fetchAll(PDO::FETCH_OBJ);
             if(!empty($data)){
-                return false;
+                return true;
             }
             else{
-                return true;
+                return false;
             }
         }
         catch(Exception $e)
