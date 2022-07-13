@@ -6,6 +6,9 @@
     <title>Détail article</title>
 </head>
 <body>
-    
+    <form action="" method="post">
+        <textarea name="commentaire" cols="30" rows="10"></textarea>
+        <p><input type="submit" value="ajouter" name="submit"></p>
+    </form>
 </body>
 </html>
