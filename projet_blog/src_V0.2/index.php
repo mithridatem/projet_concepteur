@@ -1,28 +1,30 @@
 <?php
 
-//Analyse de l'url avec parse_url et retourne ses composants
+  session_start();
+
+# Analyse de l'url avec parse_url et retourne ses composants
 
 $url = parse_url($_SERVER['REQUEST_URI']);
 
-foreach ($url as $key => $value) {
-  echo $value;
-}
 
-//test soit l'url a une route sinon on renvoi à la racine
+# Test soit l'url a une route sinon on renvoi à la racine
 
-$path = isset($url['path']) ? $url['path'] : '/';
+$uri_path = isset($url['path']) ? $url['path'] : '/';
 
-echo $path;
+
 
 /****************************/
 
-switch ($path) {
-  case $path === "/Blog/src_V0.2/addArticle":
+switch ($uri_path ) {
+  case $uri_path  === "/Blog/src_V0.2/addArticle":
     include './controller/ctrl_add_article.php';
     break;
-  case $path === "/Blog/src_V0.2/addUser":
+  case $uri_path  === "/Blog/src_V0.2/addUser":
     include './controller/ctrl_add_user.php';
     break;
+  case $uri_path === "/Blog/src_V0.2/connexion";
+  include './controller/ctrl_connexion.php';
+  break;
   default:
     include './vue/template.php';
     break;

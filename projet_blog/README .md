@@ -10,8 +10,8 @@ Les visiteurs devront pouvoir consulter les articles et les commentaires.
 Le code ce trouve dans la partie source  
 
 La stack : 
-PHP 7.4 
-Mysql 
+PHP8.1.18 
+Mysql 5.2 (en cours d'upgrade pour la 8)
 Apache 
 Tailwinds
 
@@ -42,7 +42,7 @@ npx tailwindcss -i ./input.css -o ./dist/output.css --watch
 Pour mieux comprendre le code rendez-vous sur la documentation de tailwindcss
 
 
-
+NOTE ARBO :
     src/: "source" files to build and develop the project. This is where the original source files are located, before being compiled into fewer files to dist/, public/ or build/.
 
     dist/: "distribution", the compiled code/library, also named public/ or build/. The files meant for production or public use are usually located here.

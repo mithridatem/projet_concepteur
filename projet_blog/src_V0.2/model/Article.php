@@ -21,9 +21,9 @@ class Article
         return $this->name_art;
     }
 
-    public function set_name_art($value):STRING
+    public function set_name_art($value):VOID
     {
-        return $this->name_art = $value;
+         $this->name_art = $value;
     }
 
     public function get_content_art():STRING
@@ -31,18 +31,18 @@ class Article
         return $this->content_art;
     }
 
-    public function set_content_art($value):STRING
+    public function set_content_art($value):VOID
     {
-        return $this->content_art = $value;
+         $this->content_art = $value;
     }
 
     public function get_date_art():STRING
     {
         return $this->date_art;
     }
-    public function set_date_art($value):STRING
+    public function set_date_art($value):VOID
     {
-        return $this->date_art = $value;
+         $this->date_art = $value;
     }
 
     public function get_id_art():INT
@@ -50,9 +50,9 @@ class Article
         return $this->id_art;
     }
 
-    public function set_id_art($value):INT
+    public function set_id_art($value):VOID
     {
-        return $this->id_art = $value;
+         $this->id_art = $value;
     }
 
     public function get_id_type():INT
@@ -60,8 +60,8 @@ class Article
         return $this->id_type;
     }
 
-    public function set_id_type($value):INT
+    public function set_id_type($value):VOID
     {
-        return $this->id_type = $value;
+        $this->id_type = $value;
     }
 }

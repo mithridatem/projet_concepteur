@@ -20,13 +20,18 @@
     <link href="./dist/output.css" rel="stylesheet" />
 </head>
 
-<body class="relative">
-    <nav class="bg-blue-800 w-full h-32 flex pl-5 pr-10 shadow-2xl ">
-        <div class="w-1/6 ">
-            <img src="./dist/img/Logo.png" alt="" class="object-contain h-72 justify-start">
+<body>
 
+    <nav class="bg-blue-800 w-full justify-center lg:h-32 lg:flex pl-5 lg:relative pr-10 lg:shadow-2xl h-10 absolute top-0 z-10 overflow-hidden">
+
+        <div class="lg:w-1/6 w-6/6 h-auto lg:block mx-auto flex">
+            <img src="./dist/img/Logo.png" alt="" class="mx-auto w-64" >
+            <svg xmlns="http://www.w3.org/2000/svg" id="menu-button" class="h-6 w-6 cursor-pointer md:hidden block mt-2" fill="none" viewBox="0 0 24 24" stroke="white">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
         </div>
-        <ul class="flex justify-center  text-white text-2xl h-full items-end w-4/6 pb-5 ">
+
+        <ul class="lg:flex justify-center text-white text-2xl lg:h-full items-end w-4/6 pb-5 hidden ">
             <a href="#" class="hover:text-blue-300">
                 <li class="pr-10">Accueil</li>
             </a>
@@ -37,14 +42,33 @@
                 <li class="pl-10">Projet</li>
             </a>
         </ul>
-        <ul class="flex justify-end text-white text-2xl h-full items-center w-1/6 ">
+
+        <ul class="lg:flex justify-end text-white text-2xl lg:h-full items-center w-1/6 hidden ">
+            <a href="#" class="hover:text-blue-300 modal-button-js">
+                <li>Connexion</li>
+            </a>
+        </ul>
+
+        <ul class=" justify-center text-center text-white text-2xl items-end w-6/6 pb-5 lg:hidden hidden">
+            <a href="#" class="hover:text-blue-300">
+                <li class="">Accueil</li>
+            </a>
+            <a href="#" class="hover:text-blue-300">
+                <li>Article</li>
+            </a>
+            <a href="#" class="hover:text-blue-300">
+                <li class="">Projet</li>
+            </a>
             <a href="#" class="hover:text-blue-300 modal-button-js">
                 <li>Connexion</li>
             </a>
         </ul>
     </nav>
-    <h1 class="text-center text-2xl text-gray-700 mt-20">Créer ton <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-blue-800 relative inline-block "><span class="relative text-white">Compte</span> </span></h1>
-    <form action="" class="justify-center flex  " method="POST" enctype="multipart/form-data">
+
+    <h1 class="text-center text-2xl text-gray-700 mt-20">Créer ton <span class=" z-20 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-blue-800 relative inline-block "><span class="relative text-white">Compte</span> </span></h1>
+
+    <form action="" class="justify-center flex z-2O " method="POST" enctype="multipart/form-data">
+
         <div class="mt-8 xl:w-3/5 flex md:w-5/5">
             <div class="grid grid-cols-1 gap-6 xl:w-2/4 sm:w-4/4">
                 <label class="block">
@@ -73,9 +97,11 @@
                 <img src="./dist/img/product-launch-in-business-startup.svg" alt="">
             </div>
         </div>
+
     </form>
+
     <section class="w-full h-screen absolute top-0 flex justify-center items-center modal-connexion-js hidden ">
-        <article class="w-2/4 bg-white flex justify-center h-60 items-center">
+        <article class="w-2/4 bg-white flex justify-center h-60 items-center z-20">
             <section class="w-2/4 text-center">
                 <p>
                     J'ai déjà un compte, je souhaite me connecter
@@ -88,19 +114,23 @@
                     <label class="block w-64">
                         <input type="password" placeholder="votre mot de passe" class="mt-5 block w-full px-0.5 border-1 border-b-2 border-gray-200 focus:ring-0 focus:border-blue-800" placeholder="" name="mdp_util" />
                     </label>
-                    
-                <input type="submit" value="submit" class="rounded-full bg-blue-800 text-white h-10 w-1/3 mx-auto mt-5" name="submit" />
+
+                    <input type="submit" value="submit" class="rounded-full bg-blue-800 text-white h-10 w-1/3 mx-auto mt-5" name="submit" />
                 </form>
             </section>
+
             <hr class="rotate-90 w-32">
-            <section class="w-2/4 text-center self-auto">
+
+            <section class="w-2/4 text-center place-self-stretch">
                 <p>
                     Je n'ai pas de compte, je souhaite en créée un
                 </p>
-               <a href="#"><button class="rounded-full bg-blue-800 text-white h-10 w-1/3 mx-auto mt-5">Let's Go</button></a>
+                <a href="#"><button class="rounded-full bg-blue-800 text-white h-10 w-1/3 mx-auto mt-5">Let's Go</button></a>
             </section>
+
         </article>
     </section>
+    
     <script src="./vue/js/modal.js"></script>
 </body>
 
