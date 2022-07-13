@@ -41,7 +41,7 @@ class Article{
 
 function getAllArticle($bdd){
     try{
-        $req = $bdd->prepare('SELECT article.name_art, article.date_art, article.content_art, type.name_type AS name_type FROM article LEFT JOIN type ON article.id_type=type.id_type');
+        $req = $bdd->prepare('SELECT article.id_art, article.name_art, article.date_art, article.content_art, type.name_type AS name_type FROM article LEFT JOIN type ON article.id_type=type.id_type');
         $req->execute();
         $data = $req->fetchAll(PDO::FETCH_OBJ);
         return $data;
@@ -55,7 +55,7 @@ function getAllArticle($bdd){
 
 function getArticle($bdd, $id_art){
     try{
-        $req = $bdd->prepare('SELECT * FROM article WHERE id_art=:id_art');
+        $req = $bdd->prepare('SELECT article.id_art, article.name_art, article.date_art, article.content_art, type.name_type AS name_type FROM article LEFT JOIN type ON article.id_type=type.id_type WHERE article.id_art=:id_art');
         $req->execute(array(
             'id_art' => $id_art
         ));

@@ -4,6 +4,7 @@ $bdd = BDD::getBDD();
 include './utils/utils.php';
 include './view/add_article.php';
 $css = "add_user.css";
+$nav=true;
 $content = ob_get_clean();
 include './view/template.php';
 include './model/article.php';

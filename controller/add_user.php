@@ -4,6 +4,7 @@ $bdd = BDD::getBDD();
 include './utils/utils.php';
 include './view/add_user.php';
 $css = "add_user.css";
+$nav = true;
 $content = ob_get_clean();
 include './view/template.php';
 include './utils/validator.php';

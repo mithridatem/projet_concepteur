@@ -36,7 +36,7 @@ function validate_post($bdd){
 if(validate_post($bdd)){
     global $user;
     $_SESSION['user'] = $user;
-    header('location: /projet/add_user');
+    header('location: /projet/all_article');
 }
 
 ?>
