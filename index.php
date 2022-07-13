@@ -9,25 +9,28 @@
     switch($path){
     
     case $path === "/cda/addArticle":
-    include './controller/ctrlAddArticle.php';
-    break ;
+        include './controller/ctrlAddArticle.php';
+        break;
     
     case $path === "/cda/addUser":
-    include './controller/ctrlAddUser.php';
-    break ;
+        include './controller/ctrlAddUser.php';
+        break;
 
     case $path === "/cda/allArticle":
-    include './controller/ctrlShowAllArticle.php';
-    break ;
+        include './controller/ctrlShowAllArticle.php';
+        break;
     
     case $path === "/cda/connexion":
         include './controller/ctrlConnexion.php';
-        break ;
-
-    case $path !=='';
-    include './error.php';
-    break;
+        break;
+    case $path === "/cda/deco":
+        include './controller/ctrlDeconnexion.php';
+        break;
     
+    case $path !=='';
+        include './error.php';
+        break;
+
     default:
     include './error.php';
     break;

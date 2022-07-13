@@ -4,6 +4,10 @@
     include './utils/connectBdd.php';
     include './model/article.php';
     include './manager/article.php';
+    //test connexion
+    if(!isset($_SESSION['connected'])){
+        header('location: connexion?error=interdit');
+    }
     //test si submit à été cliqué
     if(isset($_POST['bt'])){
         //test si les champs sont remplis
