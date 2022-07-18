@@ -762,8 +762,8 @@ select {
   margin-right: auto;
 }
 
-.mt-40 {
-  margin-top: 10rem;
+.mt-10 {
+  margin-top: 2.5rem;
 }
 
 .mt-8 {
@@ -778,6 +778,10 @@ select {
   margin-top: 0.25rem;
 }
 
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -786,20 +790,12 @@ select {
   margin-top: 5rem;
 }
 
-.mb-10 {
-  margin-bottom: 2.5rem;
-}
-
 .ml-10 {
   margin-left: 2.5rem;
 }
 
 .mt-5 {
   margin-top: 1.25rem;
-}
-
-.mt-10 {
-  margin-top: 2.5rem;
 }
 
 .block {
@@ -850,6 +846,14 @@ select {
   width: 40%;
 }
 
+.w-2\/3 {
+  width: 66.666667%;
+}
+
+.w-2\/4 {
+  width: 50%;
+}
+
 .w-64 {
   width: 16rem;
 }
@@ -866,24 +870,12 @@ select {
   width: 16.666667%;
 }
 
-.w-2\/3 {
-  width: 66.666667%;
-}
-
-.w-2\/4 {
-  width: 50%;
-}
-
 .w-1\/3 {
   width: 33.333333%;
 }
 
 .w-32 {
   width: 8rem;
-}
-
-.w-20 {
-  width: 5rem;
 }
 
 .rotate-90 {
@@ -1082,6 +1074,36 @@ select {
 
 .modal-connexion-js{
   background-color: rgba(30, 64, 175, 0.5);
+}
+
+.first-letter\:float-left::first-letter {
+  float: left;
+}
+
+.first-letter\:mr-3::first-letter {
+  margin-right: 0.75rem;
+}
+
+.first-letter\:text-7xl::first-letter {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+.first-letter\:font-bold::first-letter {
+  font-weight: 700;
+}
+
+.first-letter\:text-white::first-letter {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.first-line\:uppercase::first-line {
+  text-transform: uppercase;
+}
+
+.first-line\:tracking-widest::first-line {
+  letter-spacing: 0.1em;
 }
 
 .before\:absolute::before {

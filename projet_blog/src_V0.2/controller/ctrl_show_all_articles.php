@@ -14,7 +14,6 @@ $articles = new Manager_article(null, null, null, null, null);
 #Tout les article
 
 ob_start();
-
 foreach ($articles->get_all_articles($bdd) as $article) {?>
      <hr class="w-full mt-10">
      <a href="./article?id=<?=$article->id_art?>" class="text-2xl"><?=$article->name_art?></a>
