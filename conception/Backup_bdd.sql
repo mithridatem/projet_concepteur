@@ -18,7 +18,6 @@ CREATE TABLE `article` (
 
 -- --------------------------------------------------------
 
-
 --
 -- Structure de la table `commenter`
 --
