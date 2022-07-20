@@ -12,7 +12,7 @@ class BDD{
             $obj->bdd,
             $obj->id, 
             $obj->pwd,
-            [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+            array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)
         );
     }
     public static function getBDD(){

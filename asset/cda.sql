@@ -19,10 +19,9 @@ CREATE TABLE `article` (
 CREATE TABLE `commenter` (
   `id_art` int(11) NOT NULL,
   `id_util` int(11) NOT NULL,
-  `commentaire` text NOT NULL,
-  `date_commentaire` date NOT NULL
+  `date_commentaire` DATETIME NOT NULL,
+  `commentaire` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 -- --------------------------------------------------------
 
 --
@@ -73,12 +72,6 @@ ALTER TABLE `article`
   ADD PRIMARY KEY (`id_art`),
   ADD KEY `article_type_FK` (`id_type`);
 
---
--- Index pour la table `commenter`
---
-ALTER TABLE `commenter`
-  ADD PRIMARY KEY (`id_art`,`id_util`),
-  ADD KEY `commenter_utilisateur0_FK` (`id_util`);
 
 --
 -- Index pour la table `role`
@@ -137,12 +130,6 @@ ALTER TABLE `utilisateur`
 ALTER TABLE `article`
   ADD CONSTRAINT `article_type_FK` FOREIGN KEY (`id_type`) REFERENCES `type` (`id_type`);
 
---
--- Contraintes pour la table `commenter`
---
-ALTER TABLE `commenter`
-  ADD CONSTRAINT `commenter_article_FK` FOREIGN KEY (`id_art`) REFERENCES `article` (`id_art`),
-  ADD CONSTRAINT `commenter_utilisateur0_FK` FOREIGN KEY (`id_util`) REFERENCES `utilisateur` (`id_util`);
 
 --
 -- Contraintes pour la table `utilisateur`
@@ -150,3 +137,27 @@ ALTER TABLE `commenter`
 ALTER TABLE `utilisateur`
   ADD CONSTRAINT `utilisateur_role_FK` FOREIGN KEY (`id_role`) REFERENCES `role` (`id_role`);
 
+
+
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `commenter`
+--
+ALTER TABLE `commenter`
+  ADD PRIMARY KEY (`id_art`,`id_util`,`date_commentaire`),
+  ADD KEY `fk_utilisateur` (`id_util`);
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `commenter`
+--
+ALTER TABLE `commenter`
+  ADD CONSTRAINT `fk_article` FOREIGN KEY (`id_art`) REFERENCES `article` (`id_art`),
+  ADD CONSTRAINT `fk_utilisateur` FOREIGN KEY (`id_util`) REFERENCES `utilisateur` (`id_util`);

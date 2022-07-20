@@ -5,7 +5,6 @@ $url = parse_url($_SERVER['REQUEST_URI']);
 $path = isset($url['path']) ? $url['path'] : '/';
 $LOGIN_MANDATORY_URL = [
     "/projet/disconnect",
-    "/projet/add_user",
     "/projet/add_article",
     "/projet/add_type",
     "/projet/delete_user",

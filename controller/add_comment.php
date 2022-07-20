@@ -29,7 +29,7 @@ function validate_post(){
 
 if(validate_post()){
     echo"success";
-    $_POST['date'] = date('Y-m-d');
+    $_POST['date'] = date('Y-m-d h:m:s');
     $comment = new CommentManager($_SESSION['user']->id_util, $_POST['comment'], $_GET['id'], $_POST['date']);
     $comment->create($bdd);
 }
