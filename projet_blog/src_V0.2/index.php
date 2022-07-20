@@ -64,5 +64,7 @@ try{
   }
   include './vue/template.php';
 }catch(Exception $ex){
-  
+  ob_start();
+  include './controller/ctrl_404.php';
+  $content = ob_get_clean();
 }
