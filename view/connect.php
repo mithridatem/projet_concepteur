@@ -1,5 +1,10 @@
 <?php ob_start();?>
-    <form action="" method="post" enctype="multipart/form-data">
+    <nav>
+        <a href="/projet/">
+            Tous les articles
+        </a>
+    </nav>
+    <form action="" method="post" enctype="multipart/form-data" class="full-page">
         <p>Email:</p>
         <input type="email" name="mail_util" required/>
         <p>Password:</p>

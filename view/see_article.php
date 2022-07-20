@@ -29,11 +29,12 @@ ob_start();
                                     <p>$content</p>
                                 </div>";
                                 $comment = getComment($bdd,$id);
+                                echo"<h3>Commentaire</h3>";
                                 foreach($comment as $c){
                                     $date_comment = $c->date_commentaire;
                                     $user_comment = $c->first_name_util.' '.$c->name_util;
                                     $content_comment = $c->commentaire;
-                                    echo"<div class='article'>
+                                    echo"<div class='comment'>
                                     <h3>$user_comment</h3>
                                     <h4>Du: $date_comment</h4>
                                     <p>$content_comment</p>

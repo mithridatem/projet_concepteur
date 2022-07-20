@@ -3,6 +3,12 @@ form{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0 5px 0 5px;
+    border: 1px solid black;
+    background-color: lightgrey;
+    text-decoration: none;
+    color: black;
+    box-shadow: 2px 2px black;
 }
  #submit{
     margin-top: 2vh;
