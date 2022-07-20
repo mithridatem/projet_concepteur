@@ -160,4 +160,4 @@ ALTER TABLE `commenter`
 --
 ALTER TABLE `commenter`
   ADD CONSTRAINT `fk_article` FOREIGN KEY (`id_art`) REFERENCES `article` (`id_art`),
-  ADD CONSTRAINT `fk_utilisateur` FOREIGN KEY (`id_util`) REFERENCES `utilisateur` (`id_util`);
+  ADD CONSTRAINT `fk_utilisateur` FOREIGN KEY (`id_util`) REFERENCES `utilisateur` (`id_util`) ON DELETE CASCADE;

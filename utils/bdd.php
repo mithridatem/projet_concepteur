@@ -26,9 +26,6 @@ class BDD{
 }
 
 
-
-
-
 function getAll($bdd, $table){
     try{
         $req = $bdd->prepare("SELECT * FROM $table");
