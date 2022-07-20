@@ -1,5 +1,5 @@
 <?php ob_start();?>
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="" method="post" enctype="multipart/form-data" class="full-page">
             <p>Prénom:</p>
             <input type="text" name="first_name_util" required/>
             <p>Nom:</p>

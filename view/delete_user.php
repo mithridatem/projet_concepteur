@@ -1,5 +1,5 @@
 <?php ob_start();?>
-<form action="" method="post">
+<form action="" method="post" class="full-page">
             <p>Utilisateur:</p>
             <select name="id_util">
             <?php
