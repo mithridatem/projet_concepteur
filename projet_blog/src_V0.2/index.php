@@ -6,7 +6,7 @@ session_start();
 # Analyse de l'url avec parse_url et retourne ses composants
 
 $url = parse_url($_SERVER['REQUEST_URI']);
-# Test soit l'url a une route sinon on renvoi à la racine
+  # Test soit l'url a une route sinon on renvoi à la racine
 
 $uri_path = isset($url['path']) ? $url['path'] : '/';
 $LOGIN_MANDATORY_URL = [
