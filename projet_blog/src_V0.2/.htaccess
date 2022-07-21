@@ -1,6 +1,6 @@
 rewriteEngine on
 
-RewriteBase /blog_folio/src_V0.2
+RewriteBase /
 
 RewriteCond %{REQUEST_FILENAME} !-f
 

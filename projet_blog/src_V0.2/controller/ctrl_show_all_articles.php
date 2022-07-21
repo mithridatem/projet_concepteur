@@ -22,10 +22,11 @@ foreach ($articles->get_all_articles($bdd) as $article) {
 ?>
 
      <hr class="w-full mt-10">
-     <section>
-     <a href="./article?id=<?= $article->id_art ?>" class="text-6xl "><?= $article->name_art ?></a>
+     <section class="relative">
+     <img src="./dist/img/<?= $actual_type->img_type ?>" alt="" class="w-full h-80 object-cover object-center">
 
-     <img src="./dist/img/<?= $actual_type->img_type ?>" alt="" class="w-full h-60 object-cover object-center relative">
+     <a href="./article?id=<?= $article->id_art ?>" class="text-6xl"><?= $article->name_art ?></a>
+
      </section>
 
 <?php }

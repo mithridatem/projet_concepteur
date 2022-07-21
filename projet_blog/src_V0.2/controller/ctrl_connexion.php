@@ -39,6 +39,7 @@ if(isset($_POST['submit'])){
                 $_SESSION['id'] = $user->id_util;
                 $_SESSION['name'] = $user->name_util;
                 $_SESSION['connected'] = true;
+                $_SESSION['role'] = $user->id_role;
                 if(isset($_SESSION["temp_page"])){
                 header('location: ' .$_SESSION["temp_page"] );
 

@@ -6,15 +6,19 @@ session_start();
 # Analyse de l'url avec parse_url et retourne ses composants
 
 $url = parse_url($_SERVER['REQUEST_URI']);
-var_dump($url["path"]);
 # Test soit l'url a une route sinon on renvoi à la racine
 
 $uri_path = isset($url['path']) ? $url['path'] : '/';
-$base = "/blog_folio/src_V0.2/";
+$LOGIN_MANDATORY_URL = [
+  "/disconnect",
+  "/add_article",
+];
+$base = "/";
 
 
 /****************************/
 try{
+if(!isset($_SESSION['user']) && in_array($uri_path, $LOGIN_MANDATORY_URL))$uri_path = '/projet/connect';
   switch ($uri_path) {
   case $uri_path  === $base:
       ob_start();

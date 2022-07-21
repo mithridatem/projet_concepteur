@@ -37,7 +37,7 @@
             <?php } ?>
         </ul>
 
-        <ul class="lg:flex justify-end text-white text-2xl lg:h-full items-center w-1/6 hidden ">
+        <ul class="lg:flex  justify-end text-white text-2xl lg:h-full items-center w-1/6 hidden ">
         <?php 
                 if(isset($_SESSION['connected'])){?>
                 
@@ -49,7 +49,14 @@
             <a href="#" class="hover:text-blue-300 modal-button-js">
                 <li>Connexion</li>
             </a>
-            <?php } ?>
+            <?php }
+            if(isset($_SESSION['connected'])):?>
+                            
+                            <a href="./connexion" class="hover:text-blue-300 modal-button-js">
+                <li>Administration</li>
+            </a>
+           <?php endif; ?>
+                
         </ul>
 
         <ul class=" justify-center text-center text-white text-2xl items-end w-6/6 pb-5 lg:hidden ">
@@ -79,7 +86,13 @@
             <a href="./connexion" class="hover:text-blue-300 modal-button-js">
                 <li>Connexion</li>
             </a>
-            <?php } ?>
+            <?php }
+            if(isset($_SESSION['connected'])):?>
+                            
+                            <a href="./connexion" class="hover:text-blue-300 modal-button-js">
+                <li>Admin</li>
+            </a>
+           <?php endif; ?>
         </ul>
     </nav>
 

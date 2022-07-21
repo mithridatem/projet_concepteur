@@ -57,7 +57,7 @@ function display_article($article_wanted)
         <?php }else{ 
             ?>
             <a href="./connexion">
-            <button class="rounded-full bg-blue-800 text-white h-10 w-60  mx-auto mt-5 ">Me connecter</button>
+            <button class="rounded-full bg-blue-800 text-white h-10 w-60  mx-auto mt-5 ">Me connecter pour ajouter un commentaire</button>
         </a>
         <?php } ?>
     </section>
@@ -77,9 +77,9 @@ function display_comment($comment_wanted, $bdd)
 
         $actual_user = $manage_user->user_by_id($bdd, $id_util);
         ?>
-        <div class="p-6 w-1/3 lg:w-2/3  bg-white rounded-xl shadow-lg flex  space-x-4 mb-14 break-all ">
+        <div class="p-6 w-1/3 lg:w-2/3  bg-white rounded-xl shadow-lg flex lg:flex-col lg:items-center lg:text-white space-x-4 mb-14 break-all ">
             <div class="shrink-0">
-                <img class="h-12 w-12" src="./dist/img/<?=$actual_user->img_util?>" alt="ChitChat Logo">
+                <img class="h-12 w-12" src="./dist/img/<?=$actual_user->img_util?>" alt="image de profil de <?= $actual_user->name_util?>">
             </div>
             <div >
                 <div class="text-xl font-medium text-black"> <?= $actual_user->name_util?> <?= $actual_user->first_name_util?></div>
