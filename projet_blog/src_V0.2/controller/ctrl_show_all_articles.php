@@ -14,7 +14,7 @@ $title = "Articles";
  */
 $articles = new Manager_article(null, null, null, null, null);
 $type = new Manager_type(null, null, null);
-#Tout les article
+#Tous les article
 
 ob_start();
 foreach ($articles->get_all_articles($bdd) as $article) {

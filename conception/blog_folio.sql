@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 20 juil. 2022 à 17:24
+-- Généré le : jeu. 28 juil. 2022 à 18:59
 -- Version du serveur : 8.0.29
 -- Version de PHP : 8.1.8
 
@@ -69,7 +69,9 @@ CREATE TABLE IF NOT EXISTS `commenter` (
 
 INSERT INTO `commenter` (`id_art`, `id_util`, `date_commentaire`, `commentaire`) VALUES
 (2, 1, '2022-07-18 02:07:21', '      zefzefzfzef'),
-(2, 1, '2022-07-20 01:07:24', '      azdazd');
+(2, 1, '2022-07-20 01:07:24', '      azdazd'),
+(2, 1, '2022-07-21 12:07:33', '      azdazdazd'),
+(2, 1, '2022-07-24 08:07:48', '      x&#039;rc&#039;rc&#039;rc&#039;rxe&#039;v');
 
 -- --------------------------------------------------------
 
@@ -131,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `mdp_util` varchar(100) NOT NULL,
   `img_util` varchar(50) NOT NULL,
   `statut_util` tinyint(1) NOT NULL,
-  `id_role` int DEFAULT NULL,
+  `id_role` int DEFAULT '2',
   PRIMARY KEY (`id_util`),
   KEY `utilisateur_role_FK` (`id_role`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -141,9 +143,9 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`id_util`, `name_util`, `first_name_util`, `mail_util`, `mdp_util`, `img_util`, `statut_util`, `id_role`) VALUES
-(1, 'Ruben', 'Navone', 'navone_ruben@msn.com', '$2y$10$/KSM//s4Nr.PFpbm1hjiruaYB14NYPOGBP.cVSIXkf.frrajESa0W', 'default.jpg', 0, NULL),
-(2, 'Gérard', 'malin', 'gerard@mail.Fr', '$2y$10$STUhzZUEWDp98ftp0S9kguOy0YX7sCtWGhS4PqjwR9FtANGwbVEqi', 'default.jpg', 0, NULL),
-(3, 'James', 'pal', 'james@gd.com', '$2y$10$C6KgWRO7UOH7vaUFaex3Nue4Zq9SIMz0vAvjz/PbiejkxBrFZIfoK', 'barzork_mort-removebg-preview.png', 0, NULL);
+(1, 'Ruben', 'Navone', 'navone_ruben@msn.com', '$2y$10$/KSM//s4Nr.PFpbm1hjiruaYB14NYPOGBP.cVSIXkf.frrajESa0W', 'default.jpg', 0, 1),
+(2, 'Gérard', 'malin', 'gerard@mail.Fr', '$2y$10$STUhzZUEWDp98ftp0S9kguOy0YX7sCtWGhS4PqjwR9FtANGwbVEqi', 'default.jpg', 0, 2),
+(3, 'James', 'pal', 'james@gd.com', '$2y$10$C6KgWRO7UOH7vaUFaex3Nue4Zq9SIMz0vAvjz/PbiejkxBrFZIfoK', 'barzork_mort-removebg-preview.png', 0, 2);
 
 --
 -- Contraintes pour les tables déchargées

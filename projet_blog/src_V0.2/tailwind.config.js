@@ -4,7 +4,11 @@ module.exports = {
   "./*/*.{php,html,js}"],
 
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        caviar: ["caviar_dreamsregular"],
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),

@@ -8,9 +8,17 @@
     <title>Inscription</title>
     <link href="./dist/output.css" rel="stylesheet" />
 </head>
-
+<style>
+    @font-face {
+    font-family: 'caviar_dreamsregular';
+    src: url('asset/font/CaviarDreams-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: 100;
+}
+    </style>
 <body>
-    <nav class="bg-blue-800 w-full justify-center lg:h-32 lg:flex pl-5 lg:relative pr-10 lg:shadow-2xl h-10 absolute top-0 z-20 overflow-hidden ease-in duration-300">
+    <nav class="bg-blue-800 w-full justify-center lg:h-32 absolute lg:flex pl-5 pr-10 lg:shadow-2xl h-10  top-0 z-20 overflow-hidden ease-in duration-300 ">
 
         <div class="lg:w-1/6 w-6/6 h-auto lg:block mx-auto flex relative">
             <img src="./dist/img/Logo.png" alt="" class="mx-auto w-64">
@@ -29,34 +37,34 @@
             <a href="#" class="hover:text-blue-300">
                 <li class="pl-10">Projet</li>
             </a>
-            <?php 
-                if(isset($_SESSION['connected'])){?>
-                       <a href="./addArticle" class="hover:text-blue-300">
-                <li class="pl-10">Ajouter un article</li>
-            </a>
+            <?php
+            if (isset($_SESSION['connected'])) { ?>
+                <a href="./addArticle" class="hover:text-blue-300">
+                    <li class="pl-10">Ajouter un article</li>
+                </a>
             <?php } ?>
         </ul>
 
-        <ul class="lg:flex  justify-end text-white text-2xl lg:h-full items-center w-1/6 hidden ">
-        <?php 
-                if(isset($_SESSION['connected'])){?>
-                
-            <a href="./deconnexion" class="hover:text-blue-300 ">
-                <li>Deconnecter</li>
-            </a>
-                <?php }else{ ?>
-                
-            <a href="#" class="hover:text-blue-300 modal-button-js">
-                <li>Connexion</li>
-            </a>
+        <ul class="lg:flex lg:flex-col justify-end text-white text-2xl lg:h-full items-center w-1/6 hidden ">
+            <?php
+            if (isset($_SESSION['connected'])) { ?>
+
+                <a href="./deconnexion" class="hover:text-blue-300 ">
+                    <li>Deconnecter</li>
+                </a>
+            <?php } else { ?>
+
+                <a href="#" class="hover:text-blue-300 modal-button-js">
+                    <li>Connexion</li>
+                </a>
             <?php }
-            if(isset($_SESSION['connected'])):?>
-                            
-                            <a href="./connexion" class="hover:text-blue-300 modal-button-js">
-                <li>Administration</li>
-            </a>
-           <?php endif; ?>
-                
+            if (isset($_SESSION['connected'])) : ?>
+
+                <a href="./admin" class="hover:text-blue-300 modal-button-js">
+                    <li>Administration</li>
+                </a>
+            <?php endif; ?>
+
         </ul>
 
         <ul class=" justify-center text-center text-white text-2xl items-end w-6/6 pb-5 lg:hidden ">
@@ -69,34 +77,36 @@
             <a href="#" class="hover:text-blue-300">
                 <li class="">Projet</li>
             </a>
-            <?php 
-                if(isset($_SESSION['connected'])){?>
-                       <a href="./addArticle" class="hover:text-blue-300">
-                <li class="pl-10">Ajouter un article</li>
-            </a>
+            <?php
+            if (isset($_SESSION['connected'])) { ?>
+                <a href="./addArticle" class="hover:text-blue-300">
+                    <li class="pl-10">Ajouter un article</li>
+                </a>
             <?php } ?>
-            <?php 
-                if(isset($_SESSION['connected'])){?>
-                
-            <a href="./deconnexion" class="hover:text-blue-300 modal-button-js  ">
-                <li>Deconnecter</li>
-            </a>
-                <?php }else{ ?>
-                
-            <a href="./connexion" class="hover:text-blue-300 modal-button-js">
-                <li>Connexion</li>
-            </a>
+            <?php
+            if (isset($_SESSION['connected'])) { ?>
+
+                <a href="./deconnexion" class="hover:text-blue-300 modal-button-js  ">
+                    <li>Deconnecter</li>
+                </a>
+            <?php } else { ?>
+
+                <a href="./connexion" class="hover:text-blue-300 modal-button-js">
+                    <li>Connexion</li>
+                </a>
             <?php }
-            if(isset($_SESSION['connected'])):?>
-                            
-                            <a href="./connexion" class="hover:text-blue-300 modal-button-js">
-                <li>Admin</li>
-            </a>
-           <?php endif; ?>
+            if (isset($_SESSION['connected'])) : ?>
+
+                <a href="./connexion" class="hover:text-blue-300 modal-button-js">
+                    <li>Admin</li>
+                </a>
+            <?php endif; ?>
         </ul>
     </nav>
+    <div class="h-10 lg:h-32">
 
-    <h1 class="text-center text-2xl text-gray-700 mt-20"><?= $content_title?> <span class=" z-10 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-blue-800 relative inline-block "><span class="relative text-white"><?=$title?></span> </span></h1>
+    </div>
+    <h1 class="text-center text-2xl text-gray-700 mt-5 mb-5 "><?= $content_title ?> <span class=" z-10 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-blue-800 relative inline-block "><span class="relative text-white"><?= $title ?></span> </span></h1>
 
     <?= $content ?>
 
@@ -131,8 +141,10 @@
 
         </article>
     </section>
-    
-    <script src="./vue/js/modal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/TextPlugin.min.js"></script>
+    <script src="./asset/js/modal.js"></script>
+
 </body>
 
 </html>

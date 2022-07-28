@@ -1,7 +1,33 @@
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* @font-face {
+    font-family: 'caviar';
+    src: url('./asset/font/Caviar_Dreams_Bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'caviar';
+    src: url('./asset/font/CaviarDreams_BoldItalic-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'caviar';
+    src: url('./asset/font/CaviarDreams_Italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+} */
+
+
 .modal-connexion-js{
     background-color: rgba(30, 64, 175, 0.5);
+}
+
+html{
+    font-family: "caviar_dreamsregular";
 }

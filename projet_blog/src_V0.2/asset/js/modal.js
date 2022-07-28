@@ -1,7 +1,8 @@
+/**
+ * MODAL
+ */
 //Get the connexion element in the nav
-console.log("Hello")
 let connexionSelector = document.querySelector(".modal-button-js");
-console.log("Hello")
 
 let modalSelector = document.querySelector(".modal-connexion-js");
 let navSelector = document.querySelector("nav");
@@ -27,3 +28,41 @@ burgerNavSelector.addEventListener("click", function () {
     navSelector.classList.toggle("h-10");
     navSelector.classList.toggle("h-full");
 })
+
+
+
+/**
+ * GSAP ANIMATION
+ */
+
+
+//Text animation
+
+//Selector 
+let sectionPresentationSelector = document.querySelector(".presentation");
+
+function writeText(newText){
+    gsap.to(".text-change-js", {repeat: 1, duration: 4, text: newText, ease: "out", yoyo: true});
+    
+
+
+}
+
+setInterval(function(){
+    document.querySelector(".clignote").classList.toggle("hidden");
+},500);
+
+sectionPresentationSelector.addEventListener("mouseenter", function(e){
+    console.log(e);
+
+    writeText("JavaScript");
+    setTimeout(function(){
+        writeText("PHP");
+    },8000);
+    setTimeout(function(){
+        writeText("Tailwinds");
+    },16000);
+
+    e.target.removeEventListener(e.type, arguments.callee);
+})
+
