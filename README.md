@@ -20,15 +20,14 @@ Tailwinds 3.1.6
 Pour executer ce code il faudra dans l'ordre.  
 cloner le folder dans votre WWW, faire un SYMLINK ou alors avec un VHOST (configuration APACHE).      
 Créer la base de donnée à l'aide du fichier SQL ce trouvant dans le dossier conception.  
-Il faudra remettre en place dans le dossier utils un pdo avec le code suivant.  
+Il faudra remettre en place à la racine un fichier secret.json, qui contient trois attribut.  
 
-```php
-<?php
-#Instanciation de l'objet PDO pour pouvoir ce connecter à la bdd
-
-$bdd = new PDO('mysql:host=localhost;dbname="nom_bdd"', 'root', '"mot_de_passe"',
-array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-?>
+```json
+{
+    "bdd": "mysql:host=localhost;dbname=",
+    "id": "",
+    "pwd": ""
+}
 ```
 
 Ouvrir un terminal dans le dossier src.  

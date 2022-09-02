@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link href="./dist/output.css" rel="stylesheet" />
-</head>
 
 <body>
     <!-- * name_art
@@ -22,8 +13,6 @@
                         class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                         placeholder="Nom de l'article" name="name_art" />
                 </label>
-
-
                 <span class="text-gray-700">Dans quel catégorie</span>
                 <select
                     class="block w-full mt-0 px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"

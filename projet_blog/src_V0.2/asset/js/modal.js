@@ -47,22 +47,24 @@ function writeText(newText){
 
 
 }
+if(sectionPresentationSelector !== null){
+    setInterval(function(){
+        document.querySelector(".clignote").classList.toggle("hidden");
+    },500);
+    
+    sectionPresentationSelector.addEventListener("mouseenter", function(e){
+        console.log(e);
+    
+        writeText("JavaScript");
+        setTimeout(function(){
+            writeText("PHP");
+        },8000);
+        setTimeout(function(){
+            writeText("Tailwinds");
+        },16000);
+    
+        e.target.removeEventListener(e.type, arguments.callee);
+    })
+}
 
-setInterval(function(){
-    document.querySelector(".clignote").classList.toggle("hidden");
-},500);
-
-sectionPresentationSelector.addEventListener("mouseenter", function(e){
-    console.log(e);
-
-    writeText("JavaScript");
-    setTimeout(function(){
-        writeText("PHP");
-    },8000);
-    setTimeout(function(){
-        writeText("Tailwinds");
-    },16000);
-
-    e.target.removeEventListener(e.type, arguments.callee);
-})
 

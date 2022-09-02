@@ -1,7 +1,6 @@
 <?php
-include './model/User.php';
-include './utils/connect_bdd.php';
-include './manager/Manager_user.php';
+require './model/user/Manager_user.php';
+require './utils/connect_bdd.php';
 
 $content_title = "Interface de ";
 $title = "Connexion";
@@ -45,7 +44,6 @@ if(isset($_POST['submit'])){
 
                 }else{
                     header('location: connexion?error=1');
-
                 }
             }else{
                 header('location: connexion?error=2');

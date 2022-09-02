@@ -1,10 +1,10 @@
 <?php
 
-include "./utils/connect_bdd.php";
-include "./model/Article.php";
-include "./manager/Manager_article.php";
-include "./model/Type.php";
-include "./manager/Manager_type.php";
+require "./utils/connect_bdd.php";
+require "./model/article/Article.php";
+require "./model/article/Manager_article.php";
+require "./model/category/Category.php";
+require "./model/category/Manager_category.php";
 
 $content_title = "Tous les";
 $title = "Articles";
@@ -21,9 +21,8 @@ foreach ($articles->get_all_articles($bdd) as $article) {
      $actual_type = $type->get_one_type($bdd, $article->id_type);
 ?>
 
-     <hr class="w-full mt-10">
-     <section class="relative">
-     <img src="./dist/img/<?= $actual_type->img_type ?>" alt="" class="w-full h-80 object-cover object-center">
+     <section class="relative mt-20 ">
+     <img src="./dist/img/<?= $actual_type->img_type ?>" alt="" class=" w-[600px] max-h-[240px] mx-auto  object-cover object-center">
 
      <a href="./article?id=<?= $article->id_art ?>" class="text-6xl"><?= $article->name_art ?></a>
 

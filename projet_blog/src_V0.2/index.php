@@ -2,7 +2,6 @@
 
 session_start();
 
-
 # Analyse de l'url avec parse_url et retourne ses composants
 
 $url = parse_url($_SERVER['REQUEST_URI']);
@@ -27,17 +26,27 @@ if(!isset($_SESSION['user']) && in_array($uri_path, $LOGIN_MANDATORY_URL))$uri_p
       break;
     case $uri_path  === $base . "addArticle":
       ob_start();
-      include './controller/ctrl_add_article.php';
+      include './controller/Article/Article_controller.php';
+      $content_title = "Ajouter un";
+      $title = "Article";
+      $article = new ArticleController();
+      $article->addArticle();
       $content = ob_get_clean();
       break;
     case $uri_path  === $base . "articles":
       ob_start();
       include './controller/ctrl_show_all_articles.php';
+      
       $content = ob_get_clean();
       break;
     case $uri_path  === $base . "article":
       ob_start();
-      include './controller/ctrl_show_article.php';
+      include './controller/Article/Article_controller.php';
+
+      $article = new ArticleController();
+      $content_title = "";
+      $title = $article->show_article();
+
       $content = ob_get_clean();
       break;
     case $uri_path  === $base . "addComment":
@@ -46,8 +55,14 @@ if(!isset($_SESSION['user']) && in_array($uri_path, $LOGIN_MANDATORY_URL))$uri_p
       $content = ob_get_clean();
       break;
     case $uri_path  === $base . "addUser":
+
       ob_start();
-      include './controller/ctrl_add_user.php';
+      include "./controller/User/User_controller.php";
+      $content_title = "Crée mon";
+      $title = "compte";
+      $user = new UserController;
+
+      $user->addUser();
       $content = ob_get_clean();
       break;
     case $uri_path === $base . "connexion";

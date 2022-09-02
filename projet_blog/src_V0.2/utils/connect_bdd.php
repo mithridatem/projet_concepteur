@@ -4,11 +4,10 @@
 
 // $bdd = new PDO('mysql:host=localhost;dbname=blog_folio', 'root', '',
 // array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-
 $bdd = BDD::getBDD();
 
+
 class BDD{
-    private $bdd = null;
     private static $instances = [];
     
     private function __construct(){

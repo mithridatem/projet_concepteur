@@ -1,7 +1,7 @@
 <?php
 include './utils/connect_bdd.php';
-include './model/Comment.php';
-include './manager/Manager_comment.php';
+include './model/comment/Comment.php';
+include './model/comment/Manager_comment.php';
 
 $content_title = "Ajouter un";
 $title = "Commentaire";

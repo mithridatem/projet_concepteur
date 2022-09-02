@@ -10,18 +10,22 @@
 </head>
 <style>
     @font-face {
-    font-family: 'caviar_dreamsregular';
-    src: url('asset/font/CaviarDreams-webfont.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-    font-stretch: 100;
-}
-    </style>
+        font-family: 'caviar_dreamsregular';
+        src: url('asset/font/CaviarDreams-webfont.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+        font-stretch: 100;
+    }
+</style>
+
 <body>
     <nav class="bg-blue-800 w-full justify-center lg:h-32 absolute lg:flex pl-5 pr-10 lg:shadow-2xl h-10  top-0 z-20 overflow-hidden ease-in duration-300 ">
 
         <div class="lg:w-1/6 w-6/6 h-auto lg:block mx-auto flex relative">
-            <img src="./dist/img/Logo.png" alt="" class="mx-auto w-64">
+            <object type="image/svg+xml" data="./dist/img/text.svg" class="logo w-64 items-center ">
+               
+            </object>
+
             <svg xmlns="http://www.w3.org/2000/svg" id="menu-button" class="right-0 h-6 w-6 cursor-pointer lg:hidden block mt-2 burger-nav-js absolute" fill="none" viewBox="0 0 24 24" stroke="white">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
@@ -112,7 +116,7 @@
 
 
     <section class="w-full h-screen absolute top-0 flex justify-center items-center modal-connexion-js hidden ">
-        <article class="w-2/4 bg-white flex justify-center h-60 items-center z-20">
+        <article class="w-2/4 bg-white flex justify-center h-[400px] items-center z-20 border-4 border-blue-700">
             <section class="w-2/4 text-center">
                 <p>
                     J'ai déjà un compte, je souhaite me connecter
@@ -132,7 +136,7 @@
 
             <hr class="rotate-90 w-32">
 
-            <section class="w-2/4 text-center place-self-stretch">
+            <section class="w-2/4 text-center place-self-stretch self-center">
                 <p>
                     Je n'ai pas de compte, je souhaite en créée un
                 </p>

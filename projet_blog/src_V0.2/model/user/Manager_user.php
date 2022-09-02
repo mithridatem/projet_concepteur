@@ -1,5 +1,5 @@
 <?php
-
+require "./model/user/User.php";
 class Manager_user extends User
 {
     public function add_user($bdd): VOID

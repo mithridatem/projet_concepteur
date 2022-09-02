@@ -2,23 +2,17 @@
 
 class Article
 {
-    private ?STRING $name_art;
-    private ?STRING $content_art;
-    private ?STRING $date_art;
-    private ?INT $id_art;
-    private ?INT $id_type;
+    
+    
 
-    function __construct($name_art, $content_art, $date_art, $id_type)
+    function __construct(private ?STRING $name_art, private ?STRING $content_art,  private ?STRING $date_art,   private ?INT $id_art, private ?INT $id_type = null)
     {
-        $this->name_art = $name_art;
-        $this->content_art = $content_art;
-        $this->date_art = $date_art;
-        $this->id_type = $id_type;
+
     }
 
     public function get_name_art(): STRING
     {
-        return $this->name_art;
+        return htmlspecialchars($this->name_art);
     }
 
     public function set_name_art($value): VOID
