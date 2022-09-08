@@ -1,3 +1,6 @@
+<?php
+  ob_start();
+  ?>
 <form action="" class="justify-center flex" method="POST">
   <div class="mt-8 w-2/5">
     <div class="grid grid-cols-1 gap-6">
@@ -18,3 +21,7 @@
     </div>
   </div>
 </form>
+<?php
+      $content = ob_get_clean();
+      require './vue/template.php';
+      ?>

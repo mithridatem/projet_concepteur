@@ -1,12 +1,8 @@
 <?php
 
 class Comment {
-    private ?INT $id_art;
-    private ?INT $îd_util;
-    private ?STRING $commentaire;
-    private ?STRING $date_commentaire;
 
-    function __construct($id_art, $id_util, $commentaire, $date_commentaire)
+    function __construct(private ?INT $id_art, private ?INT $id_util, private ?STRING $commentaire, private ?STRING $date_commentaire)
     {
         $this->id_art = $id_art;
         $this->id_util = $id_util;

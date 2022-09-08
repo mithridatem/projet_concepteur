@@ -2,9 +2,6 @@
 
 class Article
 {
-    
-    
-
     function __construct(private ?STRING $name_art, private ?STRING $content_art,  private ?STRING $date_art,   private ?INT $id_art, private ?INT $id_type = null)
     {
 

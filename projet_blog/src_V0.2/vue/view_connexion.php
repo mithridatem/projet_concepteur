@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inscription</title>
-    <link href="./dist/output.css" rel="stylesheet" />
-</head>
+<?php
+ob_start();
+?>
 
 <body>
     <article class="w-4/4 bg-white flex justify-center h-60 items-center z-20 mt-20">
@@ -24,9 +17,17 @@
                 </label>
 
                 <input type="submit" value="submit" class="rounded-full bg-blue-800 text-white w-32 h-10  mt-5" name="submit" />
+                <?php $error ?>
             </form>
+            <?= $error ?>
         </section>
     </article>
 </body>
 
 </html>
+
+<?php
+
+$content = ob_get_clean();
+require './vue/template.php';
+?>

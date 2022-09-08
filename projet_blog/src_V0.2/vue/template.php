@@ -122,7 +122,6 @@
                     J'ai déjà un compte, je souhaite me connecter
                 </p>
                 <form action="./connexion" class="justify-center items-center flex flex-col ml-10  " method="POST" enctype="multipart/form-data">
-
                     <label class="block w-64">
                         <input type="mail" class="mt-5 block w-full px-0.5 border-1 border-b-2 border-gray-200 focus:ring-0 focus:border-blue-800" placeholder="Your name" name="mail_util" />
                     </label>

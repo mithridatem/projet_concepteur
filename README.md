@@ -109,3 +109,13 @@ Pour mieux comprendre le code rendez-vous sur la documentation de tailwindcss
     .gitignore: Specification of the files meant to be ignored by Git.
 
     .gitkeep: keep empty folders in your projects.
+
+
+### TODO
+
+Faire les modification sur le dist; changer dans la ligne de watcher la sortie par public, mettre les image dans public et les upload d'image aussi.
+
+Faire en sorte que la Class PDO soit dans model et pas dans utils.
+
+Utils_controllern verifier si c'est bien placer ou pas via.
+

@@ -1,3 +1,6 @@
+<?php
+ob_start();
+?>
 <header class=" lg:h-44 h-72 bg-blue-800 text-center presentation">
     <article class="text-white  ">
         <p class="text-6xl pt-10 "> Développeur Fullstack</p>
@@ -56,6 +59,10 @@
     </article>
     <img src="./dist/img/diego-ph-fIq0tET6llw-unsplash.jpg" alt="" class="lg:w-4/4tailwind w-4/4 h-[400px] object-cover object-center">
 </section>
-<p></p>
-<p></p>
-<p></p>
+
+<?php
+$content = ob_get_clean();
+
+require './vue/template.php';
+
+?>

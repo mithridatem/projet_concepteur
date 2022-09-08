@@ -1,4 +1,6 @@
-  
+<?php
+    ob_start();
+    ?>
 
     <form action="" class="justify-center flex z-2O " method="POST" enctype="multipart/form-data">
 
@@ -33,3 +35,15 @@
 
     </form>
 
+    <?php
+
+            // Affichage des information pour l'utilisateur si il y en a 
+            if(isset($_POST["submit"])){
+                foreach ($entry as $key => $value) {
+                    echo "$value";
+                }
+            }
+
+        $content = ob_get_clean();
+        require './vue/template.php';
+    ?>

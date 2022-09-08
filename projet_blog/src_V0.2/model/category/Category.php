@@ -1,11 +1,8 @@
 <?php
 
 class Type{
-    private ?INT $id_type;
-    private ?STRING $name_type;
-    private ?STRING $img_type;
 
-    function __construct($id_type, $name_type, $img_type)
+    function __construct(private ?INT $id_type, private ?STRING $name_type, private ?STRING $img_type)
     {
         $this->id_type = $id_type;
         $this->name_type = $name_type;

@@ -2,14 +2,9 @@
 
 class User{
     private ?INT $id_util;
-    private ?STRING $name_util;
-    private ?STRING $first_name_util;
-    private ?STRING $mail_util;
-    private ?STRING $mdp_util;
-    private ?STRING $img_util;
     private ?INT $id_role = 2;
 
-   public function __construct($name_util, $first_name_util, $mail_util, $mdp_util, $img_util)
+   public function __construct(private ?STRING $name_util, private ?STRING $first_name_util, private ?STRING $mail_util, private ?STRING $mdp_util, private ?STRING $img_util)
     {
         $this->name_util = $name_util;
         $this->first_name_util = $first_name_util;
