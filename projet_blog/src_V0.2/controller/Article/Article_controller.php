@@ -8,6 +8,7 @@ require './model/article/Manager_article.php';
 require './model/comment/Comment.php';
 require './model/comment/Manager_comment.php';
 require './model/user/Manager_user.php';
+require './controller/Utils/Utils_controller.php';
 
 class ArticleController
 {
@@ -30,6 +31,7 @@ class ArticleController
         $title = "Article";
         $flag = true;
         $error = "not";
+
         if (!isset($_SESSION['connected'])) {
             header('location: connexion?error=intedit');
         }
@@ -39,23 +41,36 @@ class ArticleController
         if (isset($_POST['submit'])) {
             $flag = false;
         }
-        if(empty($_POST['name-article']) || empty($_POST['content-article'])){
+
+        if((!$flag && empty($_POST['name-article'])) || (!$flag && empty($_POST['content-article']))){
             $error = "error";
         }
+
+        if(!$flag){
+            $path = Utils_controller::check_image("img-art");
+
+            if ($path === "") {
+                $path = "default.jpg";
+                $entry_value = '<p  class="text-xl before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-red-600 relative inline-block " > <span class="relative text-white " >Image de profile par défaut</span> </p> ';
+            }
+        }
+
         if (!$flag && !empty($_POST['name-article']) && !empty($_POST['content-article'])) {
             if (empty($_POST['date-article'])) {
                 $_POST['date-article'] = date("Y-m-d");
             }
             $new_article = new Manager_article($_POST['name-article'], $_POST['content-article'], $_POST['date-article'], 1);
             $new_article->set_id_type($_POST["id-type"]);
+            $new_article->set_image_art($path);
             $new_article->add_article($this->bdd);
             $error = "ok";
         }
+
         $type = new Manager_type(null, null, null);
 
         $allTypes = $type->get_all_types($this->bdd);
 
-        include './vue/add_article.php';
+        include './vue/Article/add_article.php';
     }
 
     public function show_article()
@@ -85,15 +100,22 @@ class ArticleController
             header("location: ./articles");
         }
 
-        require './vue/view_one_article.php';
+        require './vue/Article/view_one_article.php';
 
     }
-
+    public function show_preview($id_art){
+       $preview = $this->new_article->article_preview_by_id($this->bdd, $id_art);
+        
+       if($preview){
+        $lines = explode(".", $preview->content_art);
+       }
+       return $lines[0];
+    }
     public function show_all_articles(){
         $content_title = "Tous les";
         $title = "Articles";
 
-        include "./vue/view_all_articles.php";
+        include "./vue/Article/view_all_articles.php";
 
     }
 

@@ -1,0 +1,22 @@
+
+.bg-blue-800 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(153 27 27 / var(--tw-bg-opacity));
+  }
+
+  .before\:bg-blue-800::before {
+    content: var(--tw-content);
+    --tw-bg-opacity: 1;
+    background-color: rgb(153 27 27 / var(--tw-bg-opacity));
+  }
+
+  .file\:bg-blue-800::file-selector-button {
+    --tw-bg-opacity: 1;
+        background-color: rgb(153 27 27 / var(--tw-bg-opacity));
+
+  }
+
+  .focus\:border-blue-800:focus {
+    --tw-border-opacity: 1;
+    border-color: rgb(153 27 27 / var(--tw-bg-opacity));
+  }

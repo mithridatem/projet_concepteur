@@ -41,10 +41,10 @@ class UserController
             # Verif de l'existance d'un fichiers (upload ou pas par l'utilisateur)
             $path = Utils_controller::check_image("img_util");
 
-            if($path === ""){
-                    $path = "default.jpg";
-                    $entry_value = '<p  class="text-xl before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-red-600 relative inline-block " > <span class="relative text-white " >Image de profile par défaut</span> </p> ';
-                    array_push($entry, $entry_value);
+            if ($path === "") {
+                $path = "default.jpg";
+                $entry_value = '<p  class="text-xl before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-red-600 relative inline-block " > <span class="relative text-white " >Image de profile par défaut</span> </p> ';
+                array_push($entry, $entry_value);
             }
 
             $new_user->set_img_util($path);
@@ -57,7 +57,7 @@ class UserController
             array_push($entry, $entry_value);
         }
 
-        require './vue/add_user.php';
+        require './vue/User/add_user.php';
     }
     public function add_comment()
     {
@@ -72,7 +72,7 @@ class UserController
             }
         }
 
-        include './vue/add_comment.php';
+        include './vue/User/add_comment.php';
     }
     public function connexion()
     {
@@ -90,14 +90,11 @@ class UserController
         if (isset($_GET['error']) && $_GET['error'] === '1') {
             $error = 'vous êtes connecter <br/>';
         }
-        
+
         if (isset($_GET['error'])  && $_GET['error'] === '2') {
-            $error = 'erreur de mot de passe <br/>';
+            $error = 'Erreur mail ou mot de passe<br/>';
         }
-        
-        if (isset($_GET['error'])  && $_GET['error'] === '3') {
-            $error = 'erreur le mail n\'existe pas <br/>';
-        }
+
 
         if (isset($_POST['submit'])) {
             $flag = false;
@@ -105,28 +102,34 @@ class UserController
 
         if (!$flag && !empty($_POST['mail_util'] and !empty($_POST['mdp_util']))) {
             $util = new Manager_user("", "", $_POST['mail_util'], $_POST['mdp_util'], "");
-            #Verification que le mail exist en base de données
-            if (!empty($util->verify_mail_exist($this->bdd))) {
-                $user = $util->verify_user($this->bdd);
-                $hash = $user->mdp_util;
-                if (password_verify($_POST['mdp_util'], $hash)) {
-                    $_SESSION['id'] = $user->id_util;
-                    $_SESSION['name'] = $user->name_util;
-                    $_SESSION['connected'] = true;
-                    $_SESSION['role'] = $user->id_role;
-                    if (isset($_SESSION["temp_page"])) {
-                        header('location: ' . $_SESSION["temp_page"]);
-                    } else {
-                        header('location: connexion?error=1');
-                    }
-                } else {
-                    header('location: connexion?error=2');
-                }
-            } else {
-                header('location: connexion?error=3');
-            }
+        }else if(!isset($_GET['error'])){
+            header('location: connexion?error=2');
+            $flag = true;
         }
-        include './vue/view_connexion.php';
+
+        #Verification que le mail exist en base de données
+        if (!$flag && !empty($util->verify_mail_exist($this->bdd))) {
+            $user = $util->verify_user($this->bdd);
+            $hash = $user->mdp_util;
+
+        } else if(!$flag) {
+            header('location: connexion?error=2');
+        }
+        if (!$flag && password_verify($_POST['mdp_util'], $hash)) {
+            $_SESSION['id'] = $user->id_util;
+            $_SESSION['name'] = $user->name_util;
+            $_SESSION['connected'] = true;
+            $_SESSION['role'] = $user->id_role;
+            if (isset($_SESSION["temp_page"])) {
+                header('location: ' . $_SESSION["temp_page"]);
+            } else {
+                header('location: connexion?error=1');
+            }
+        } else if(!$flag) {
+            header('location: connexion?error=2');
+        }
+
+        include './vue/User/view_connexion.php';
     }
     public function deconnexion()
     {

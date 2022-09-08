@@ -1,6 +1,9 @@
 <?php
     ob_start();
 ?>
+<header>
+    <img class="w-full h-40 object-contain" src="./dist/img/<?=$article_wanted->image_art?>" alt="">
+</header>
 <section class="flex flex-col text-left items-center w-4/5 mx-auto mt-20">
             <article class="columns-2">
                 <?php foreach ($lines as $line) { ?>

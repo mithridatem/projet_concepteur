@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inscription</title>
     <link href="./dist/output.css" rel="stylesheet" />
+    <?= $_SESSION["role"] == 1 ?"<link href='./dist/admin.css' rel='stylesheet' />" : "" ?> 
 </head>
 <style>
     @font-face {
@@ -18,17 +19,17 @@
     }
 </style>
 
-<body>
+<body class="bg-gray-200">
     <nav class="bg-blue-800 w-full justify-center lg:h-32 absolute lg:flex pl-5 pr-10 lg:shadow-2xl h-10  top-0 z-20 overflow-hidden ease-in duration-300 ">
 
         <div class="lg:w-1/6 w-6/6 h-auto lg:block mx-auto flex relative">
             <object type="image/svg+xml" data="./dist/img/text.svg" class="logo w-64 items-center ">
-               
-            </object>
 
+            </object>
+            
             <svg xmlns="http://www.w3.org/2000/svg" id="menu-button" class="right-0 h-6 w-6 cursor-pointer lg:hidden block mt-2 burger-nav-js absolute" fill="none" viewBox="0 0 24 24" stroke="white">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
+            </svg> 
         </div>
 
         <ul class="lg:flex justify-center text-white text-2xl lg:h-full items-end w-4/6 pb-5 hidden ">
@@ -42,7 +43,7 @@
                 <li class="pl-10">Projet</li>
             </a>
             <?php
-            if (isset($_SESSION['connected'])) { ?>
+            if (isset($_SESSION['connected']) && $_SESSION["role"] == 1) { ?>
                 <a href="./addArticle" class="hover:text-blue-300">
                     <li class="pl-10">Ajouter un article</li>
                 </a>
@@ -52,7 +53,9 @@
         <ul class="lg:flex lg:flex-col justify-end text-white text-2xl lg:h-full items-center w-1/6 hidden ">
             <?php
             if (isset($_SESSION['connected'])) { ?>
-
+                <a href="./profil?id=" class="hover:text-blue-300 modal-button-js">
+                    <li>Profil</li>
+                </a>
                 <a href="./deconnexion" class="hover:text-blue-300 ">
                     <li>Deconnecter</li>
                 </a>
@@ -62,11 +65,13 @@
                     <li>Connexion</li>
                 </a>
             <?php }
-            if (isset($_SESSION['connected'])) : ?>
+            if (isset($_SESSION['connected']) && $_SESSION["role"] == 1) : ?>
 
                 <a href="./admin" class="hover:text-blue-300 modal-button-js">
                     <li>Administration</li>
                 </a>
+            <?php else : ?>
+
             <?php endif; ?>
 
         </ul>

@@ -1,7 +1,7 @@
 <?php
 
 class Manager_comment extends Comment {
-    function add_comment($bdd){
+    public function add_comment($bdd){
         try {
             $req = $bdd->prepare("INSERT INTO commenter(id_art, id_util, commentaire, date_commentaire) VALUE
             (:id_art, :id_util, :commentaire, :date_commentaire)");
@@ -19,7 +19,7 @@ class Manager_comment extends Comment {
         }
     }
 
-    function comment_by_id($bdd, $id)
+    public function comment_by_id($bdd, $id)
     {
         $req = $bdd->prepare("SELECT * FROM commenter WHERE id_art = :id_art ");
         $req->execute([
@@ -29,7 +29,7 @@ class Manager_comment extends Comment {
         return $data;
     }
 
-    function remove_comment($bdd){
+    public function remove_comment($bdd){
 
     }
 }
