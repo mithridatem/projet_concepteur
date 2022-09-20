@@ -2,8 +2,7 @@
     ob_start();
     ?>
 
-    <form action="" class="justify-center flex z-2O " method="POST" enctype="multipart/form-data">
-
+    <form action="?" class="justify-center flex z-2O " method="POST" enctype="multipart/form-data">
         <div class="mt-8 xl:w-3/5 flex md:w-5/5">
             <div class="grid grid-cols-1 gap-6 xl:w-2/4 sm:w-4/4">
                 <label class="block">
@@ -16,7 +15,8 @@
                 </label>
                 <label class="block">
                     <span class="text-gray-700">Mot de passe</span>
-                    <input type="password" class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-blue-800" placeholder="AZERTYUIOP c'est pas un mot de passe" name="mdp_util" />
+                    <input type="password" class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-blue-800" 
+                    placeholder="AZERTYUIOP c'est pas un mot de passe" pattern="^\S*(?=\S{6,})(?=\S*\d)(?=\S*[A-Z])(?=\S*[a-z])(?=\S*[!@#$%^&*? ])\S*$"  name="mdp_util" />
                 </label>
                 <label class="block">
                     <span class="text-gray-700">Image de profil</span>
@@ -26,24 +26,21 @@
                     <span class="text-gray-700">Adresse mail</span>
                     <input type="email" class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-blue-800" placeholder="john@example.com" name="mail_util" />
                 </label>
+                <div class="g-recaptcha" data-sitekey="6Ld-PPohAAAAAA0xJDAxS6vayI6KMIHTqwT1jovJ"></div>
                 <input type="submit" value="Valider" class="rounded-full bg-blue-800 text-white h-10 xl:w-1/3 w-2/3 mx-auto mb-10" name="submit" />
             </div>
             <div class="w-2/4 xl:block hidden">
                 <img src="./dist/img/product-launch-in-business-startup.svg" alt="">
             </div>
         </div>
-
     </form>
-
     <?php
-
             // Affichage des information pour l'utilisateur si il y en a 
             if(isset($_POST["submit"])){
                 foreach ($entry as $key => $value) {
                     echo "$value";
                 }
             }
-
         $content = ob_get_clean();
         require './vue/template.php';
     ?>

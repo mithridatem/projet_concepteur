@@ -2,12 +2,13 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" X-Content-Type-Options=nosniff http-equiv="X-UA-Compatible"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" content="IE=edge"/>
     <title>Inscription</title>
     <link href="./dist/output.css" rel="stylesheet" />
     <?= $_SESSION["role"] == 1 ?"<link href='./dist/admin.css' rel='stylesheet' />" : "" ?> 
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </head>
 <style>
     @font-face {
@@ -53,7 +54,7 @@
         <ul class="lg:flex lg:flex-col justify-end text-white text-2xl lg:h-full items-center w-1/6 hidden ">
             <?php
             if (isset($_SESSION['connected'])) { ?>
-                <a href="./profil?id=" class="hover:text-blue-300 modal-button-js">
+                <a href="./profil" class="hover:text-blue-300 modal-button-js">
                     <li>Profil</li>
                 </a>
                 <a href="./deconnexion" class="hover:text-blue-300 ">

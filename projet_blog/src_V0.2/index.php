@@ -57,11 +57,18 @@ try {
       $user = new UserController;
       $user->deconnexion();
       break;
+    case $uri_path === $base . "profil";
+      require "./controller/User/User_controller.php";
+      $user = new UserController;
+      $user->profil_user();
+      break;
     default:
       require './controller/ctrl_404.php';
+
       break;
   }
   // require './vue/template.php';
 } catch (Exception $ex) {
   require './controller/ctrl_404.php';
+  var_dump($uri_path, $ex);
 }

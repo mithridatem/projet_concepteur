@@ -31,3 +31,7 @@
 html{
     font-family: "caviar_dreamsregular";
 }
+input:invalid {
+    border: red solid 3px;
+  }
+  

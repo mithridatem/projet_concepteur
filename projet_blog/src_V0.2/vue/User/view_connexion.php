@@ -2,7 +2,7 @@
 ob_start();
 ?>
 
-<body>
+
     <article class="w-4/4 bg-white flex justify-center h-60 items-center z-20 mt-20">
         <section class="w-4/4 text-center">
             <p>
@@ -22,9 +22,7 @@ ob_start();
             <?= $error ?>
         </section>
     </article>
-</body>
 
-</html>
 
 <?php
 

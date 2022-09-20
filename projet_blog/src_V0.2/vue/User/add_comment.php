@@ -11,7 +11,7 @@
         name="commentaire"
       >
       </textarea>
-
+      <div class="g-recaptcha" data-sitekey="6Ld-PPohAAAAAA0xJDAxS6vayI6KMIHTqwT1jovJ"></div>
       <input
         type="submit"
         value="submit"
@@ -22,6 +22,11 @@
   </div>
 </form>
 <?php
+            if(isset($_POST["submit"])){
+              foreach ($entry as $key => $value) {
+                  echo "$value";
+              }
+          }
       $content = ob_get_clean();
       require './vue/template.php';
       ?>

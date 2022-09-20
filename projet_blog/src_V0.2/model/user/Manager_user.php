@@ -19,6 +19,7 @@ class Manager_user extends User
             die('Erreur dans la requete:' . $e->getMessage());
         }
     }
+
     public function get_all_user($bdd): array
     {
         try {
@@ -46,6 +47,7 @@ class Manager_user extends User
             die('Erreur dans la requete:' . $e->getMessage());
         }
     }
+
     public function verify_user($bdd): OBJECT
     {
         try {
@@ -61,7 +63,8 @@ class Manager_user extends User
             die('Erreur dans la requete:' . $e->getMessage());
         }
     }
-    function user_by_id($bdd, $id)
+
+   public function user_by_id($bdd, $id)
     {
         try{
             $req = $bdd->prepare("SELECT * FROM utilisateur WHERE id_util = :id_util ");
@@ -73,6 +76,6 @@ class Manager_user extends User
         }catch(Exception $e){
             echo $e;
         }
-
     }
+
 }
