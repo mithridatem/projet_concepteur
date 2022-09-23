@@ -5,7 +5,7 @@ require './model/comment/Comment.php';
 require './model/comment/Manager_comment.php';
 require './controller/Utils/Utils_controller.php';
 #Flag on baisse le drapeau si une condition n'est pas remplis ainsi ils passe des les else
-class UserController
+class User_controller
 {
     private $bdd;
     public function __construct()

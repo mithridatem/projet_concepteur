@@ -10,7 +10,7 @@ require './model/comment/Manager_comment.php';
 require './model/user/Manager_user.php';
 require './controller/Utils/Utils_controller.php';
 
-class ArticleController
+class Article_controller
 {
     private $new_article;
     private $manage_comment;

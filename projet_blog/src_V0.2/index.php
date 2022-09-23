@@ -13,7 +13,7 @@ $LOGIN_MANDATORY_URL = [
   "/add_article",
 ];
 $base = "/";
-
+$base_admin = "/admin";
 
 /****************************/
 try {
@@ -24,47 +24,56 @@ try {
       break;
     case $uri_path  === $base . "addArticle":
       require './controller/Article/Article_controller.php';
-      $article = new ArticleController();
+      $article = new Article_controller();
       $article->addArticle();
       break;
     case $uri_path  === $base . "articles":
       require './controller/Article/Article_controller.php';
-      $article = new ArticleController();
+      $article = new Article_controller();
       $article->show_all_articles();
       break;
     case $uri_path  === $base . "article":
       require './controller/Article/Article_controller.php';
-      $article = new ArticleController();
+      $article = new Article_controller();
       $article->show_article();
       break;
     case $uri_path  === $base . "addComment":
       require "./controller/User/User_controller.php";
-      $user = new UserController;
+      $user = new User_controller;
       $user->add_comment();
       break;
     case $uri_path  === $base . "addUser":
       require "./controller/User/User_controller.php";
-      $user = new UserController;
+      $user = new User_controller;
       $user->addUser();
       break;
     case $uri_path === $base . "connexion";
       require "./controller/User/User_controller.php";
-      $user = new UserController;
+      $user = new User_controller;
       $user->connexion();
       break;
     case $uri_path === $base . "deconnexion";
       require "./controller/User/User_controller.php";
-      $user = new UserController;
+      $user = new User_controller;
       $user->deconnexion();
       break;
     case $uri_path === $base . "profil";
       require "./controller/User/User_controller.php";
-      $user = new UserController;
+      $user = new User_controller;
       $user->profil_user();
+      break;
+    case $uri_path === $base_admin;
+      require "./controller/Admin/admin_home_controller.php";
+      $admin = new Admin_home_controller;
+      $admin->show_home_admin();
+      break;
+    case $uri_path === $base_admin . "-article";
+      require "./controller/Admin/Master_article_controller.php";
+      $admin = new Master_article_controller;
+      $admin->show_master_article();
       break;
     default:
       require './controller/ctrl_404.php';
-
       break;
   }
   // require './vue/template.php';
