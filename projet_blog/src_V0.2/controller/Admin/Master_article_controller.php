@@ -6,7 +6,8 @@ class Master_article_controller{
         $content_title = "Gestion des";
         $title = "Articles";
 
-        include "./vue/Admin/master_view_article.php";
+        # Refacto à faire bonne pratique le __DIR__ donne le chemin courant
+        require_once __DIR__ . "/../../vue/Admin/master_view_article.php";
 
     }
 }

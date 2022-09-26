@@ -1,14 +1,13 @@
-rewriteEngine on
 
-RewriteBase /
 
+
+
+
+
+RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
-
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?page=$1
 
-#RewriteRule ^(.*)$ index.php?page=$1
-
-RewriteRule ^(.+)$ index.php [QSA,L]
-
-
-
+# RewriteRule ^(.+)$ index.php [QSA,L]
+# # RewriteRule . index.php [L]

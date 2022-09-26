@@ -5,8 +5,8 @@
     <meta charset="UTF-8" X-Content-Type-Options=nosniff http-equiv="X-UA-Compatible"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" content="IE=edge"/>
     <title>Inscription</title>
-    <link href="./dist/output.css" rel="stylesheet" />
-    <?= $_SESSION["role"] == 1 ?"<link href='./dist/admin.css' rel='stylesheet' />" : "" ?> 
+    <link href="./dist/output.css" rel="stylesheet" type="text/css"/>
+    <?= $_SESSION["role"] == 1 ?"<link href='./dist/admin.css' rel='stylesheet' type='text/css' />" : "" ?> 
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </head>
@@ -24,9 +24,9 @@
     <nav class="bg-blue-800 w-full justify-center lg:h-32 absolute lg:flex pl-5 pr-10 lg:shadow-2xl h-10  top-0 z-20 overflow-hidden ease-in duration-300 ">
 
         <div class="lg:w-1/6 w-6/6 h-auto lg:block mx-auto flex relative">
-            <object type="image/svg+xml" data="./dist/img/text.svg" class="logo w-64 items-center ">
+            <!-- <object type="image/svg+xml" data="./dist/img/text.svg" class="logo w-64 items-center ">
 
-            </object>
+            </object> -->
             
             <svg xmlns="http://www.w3.org/2000/svg" id="menu-button" class="right-0 h-6 w-6 cursor-pointer lg:hidden block mt-2 burger-nav-js absolute" fill="none" viewBox="0 0 24 24" stroke="white">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>

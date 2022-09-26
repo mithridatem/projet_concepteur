@@ -2,26 +2,30 @@
 ob_start();
 ?>
 <main>
+<article class="flex items-center mt-10 mb-10">
+            <a href="addArticle">
+                <button class="rounded-full bg-blue-800 text-white h-10 w-60 ">Ajouter un article</button>
+                </a>
+            
+        </article>
 <table class="border-collapse border border-slate-500 ...">
   <thead>
     <tr>
-      <th class="border border-slate-600 ...">State</th>
-      <th class="border border-slate-600 ...">City</th>
+      <th class="border border-slate-600 ...">Article</th>
+      <th class="border border-slate-600 ...">Auteur</th>
+      <th class="border border-slate-600 ...">Catégorie</th>
+      <th class="border border-slate-600 ...">Date</th>
+
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td class="border border-slate-700 ...">Indiana</td>
-      <td class="border border-slate-700 ...">Indianapolis</td>
+      <td class="border border-slate-700 ...">Sample article</td>
+      <td class="border border-slate-700 ...">Ruben Navone</td>
+      <td class="border border-slate-700 ...">Ruben Navone</td>
+      <td class="border border-slate-700 ...">Ruben Navone</td>
     </tr>
-    <tr>
-      <td class="border border-slate-700 ...">Ohio</td>
-      <td class="border border-slate-700 ...">Columbus</td>
-    </tr>
-    <tr>
-      <td class="border border-slate-700 ...">Michigan</td>
-      <td class="border border-slate-700 ...">Detroit</td>
-    </tr>
+  
   </tbody>
 </table>
 </main>
